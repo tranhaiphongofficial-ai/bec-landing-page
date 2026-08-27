@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Business Economics Club — FPTU HCM 2026</title>
+<meta name="description" content="BEC — Business Economics Club Đại học FPT TP.HCM tuyển thành viên 2026.">
+<meta name="theme-color" content="#050208">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%8C%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#050208;
+    --black-2:#0a0714;
+    --black-3:#0f0b1e;
+    --red:#ff2d55;
+    --red-glow:rgba(255,45,85,.55);
+    --blue:#3d7dff;
+    --blue-2:#4cc9f0;
+    --blue-glow:rgba(61,125,255,.55);
+    --orange:#ff8c00;
+    --white:#f5f5fb;
+    --muted:#a9a7c4;
+    --muted-2:#726f96;
+    --card:rgba(255,255,255,.045);
+    --card-border:rgba(255,255,255,.09);
+    --radius:18px;
+    --ease:cubic-bezier(.22,1,.36,1);
+    font-size:16px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:'Be Vietnam Pro',system-ui,sans-serif;
+    overflow-x:hidden;
+    line-height:1.6;
+  }
+  body.intro-active{overflow:hidden;height:100vh;}
+  img,video{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  ::selection{background:var(--orange);color:#000;}
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-track{background:var(--black);}
+  ::-webkit-scrollbar-thumb{background:linear-gradient(var(--orange),var(--blue));border-radius:10px;}
+
+  .container{width:min(1180px,92%);margin-inline:auto;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.78rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--orange);margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:linear-gradient(90deg,var(--orange),var(--blue-2));border-radius:2px;}
+  h1,h2,h3{font-weight:900;letter-spacing:-.01em;}
+  .section-title{
+    font-size:clamp(1.8rem,4.2vw,2.9rem);
+    text-transform:uppercase;
+    line-height:1.15;
+    margin-bottom:16px;
+    background:linear-gradient(100deg,#fff 20%,var(--blue-2) 55%,var(--orange) 85%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .section-sub{color:var(--muted);max-width:620px;font-size:1.02rem;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 34px;border-radius:100px;font-weight:700;font-size:.95rem;
+    letter-spacing:.03em;text-transform:uppercase;cursor:pointer;border:none;
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease),filter .35s var(--ease);
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:linear-gradient(100deg, var(--orange), #ff4d4d 55%, var(--blue));
+    color:#fff;
+    box-shadow:0 8px 30px -6px rgba(255,140,0,0.6), 0 8px 30px -10px var(--blue-glow);
+  }
+  .btn-primary:hover{transform:translateY(-3px) scale(1.02);filter:brightness(1.12);}
+  .btn-ghost{
+    background:rgba(255,255,255,.05);color:#fff;border:1px solid rgba(255,255,255,.22);
+    backdrop-filter:blur(6px);
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-3px);}
+
+  /* ---------- NEBULA & DEEP SPACE ---------- */
+  .nebula-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: 
+      radial-gradient(ellipse at 20% 40%, rgba(76, 201, 240, 0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 60%, rgba(255, 140, 0, 0.1) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 80%, rgba(138, 43, 226, 0.08) 0%, transparent 70%);
+    filter: blur(50px);
+    animation: breatheNebula 15s ease-in-out infinite alternate;
+  }
+  @keyframes breatheNebula {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+    100% { transform: scale(1.15) rotate(2deg); opacity: 1; }
+  }
+
+  /* ---------- GALAXY CANVAS ---------- */
+  #bgStars{
+    position:fixed;inset:0;width:100%;height:100%;
+    z-index:1;pointer-events:none;
+  }
+  
+  /* ---------- 3D DYNAMIC PLANETS ---------- */
+  .cosmic-elements {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .planet {
+    position: absolute;
+    border-radius: 50%;
+    transition: transform 0.2s ease-out;
+  }
+
+  .planet-1 {
+    width: 450px; height: 450px;
+    top: -10%; right: -15%;
+    background: radial-gradient(circle at 25% 25%, #4cc9f0 0%, #1a365d 45%, #020104 85%);
+    box-shadow: 
+      inset -40px -40px 80px rgba(0,0,0,0.95), 
+      inset 20px 20px 40px rgba(76, 201, 240, 0.3),
+      0 0 100px rgba(76, 201, 240, 0.2);
+    animation: rotatePlanet 80s linear infinite;
+    opacity: 0.9;
+  }
+  .planet-1::after {
+    content: ''; position: absolute; inset: 0; border-radius: 50%;
+    background: repeating-linear-gradient(30deg, transparent, transparent 15px, rgba(0,0,0,0.15) 15px, rgba(0,0,0,0.15) 30px);
+    opacity: 0.4; mix-blend-mode: overlay;
+  }
+
+  .planet-2 {
+    width: 160px; height: 160px;
+    bottom: 20%; left: 8%;
+    background: radial-gradient(circle at 30% 30%, var(--orange), #8b0000 60%, #050208 90%);
+    box-shadow: 
+      inset -25px -25px 40px rgba(0,0,0,0.9), 
+      0 0 60px rgba(255, 140, 0, 0.25);
+    animation: floatWithRing 18s ease-in-out infinite;
+    transform-style: preserve-3d;
+  }
+  .planet-2::before {
+    content: ''; position: absolute; top: 50%; left: 50%;
+    width: 340px; height: 90px; background: transparent;
+    border: 12px solid rgba(255, 140, 0, 0.5);
+    border-top: 12px solid rgba(255, 140, 0, 0.05);
+    border-bottom: 12px solid rgba(255, 200, 100, 0.8);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(20deg) rotateX(70deg);
+    box-shadow: 0 0 25px rgba(255, 140, 0, 0.6), inset 0 0 20px rgba(255, 140, 0, 0.4);
+  }
+
+  .planet-3 {
+    width: 60px; height: 60px;
+    background: radial-gradient(circle at 30% 30%, #fff 0%, #ff4d4d 40%, #4a0b1f 80%);
+    box-shadow: 0 0 40px #ff4d4d, 0 0 80px rgba(255, 77, 77, 0.4), inset -10px -10px 15px rgba(0,0,0,0.6);
+    animation: orbitMotion 40s linear infinite;
+  }
+
+  @keyframes rotatePlanet { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  @keyframes floatWithRing { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(50px); } }
+  @keyframes orbitMotion {
+    0% { transform: translate(-20vw, 90vh) scale(0.6); opacity: 0.3; }
+    50% { transform: translate(50vw, 30vh) scale(1.3); opacity: 1; }
+    100% { transform: translate(120vw, -20vh) scale(0.5); opacity: 0; }
+  }
+
+  /* ---------- intro ---------- */
+  #intro{
+    position:fixed;inset:0;z-index:9999;background:var(--black);
+    display:flex;align-items:center;justify-content:center;
+    clip-path:circle(150% at 50% 50%);
+    transition:clip-path 1.1s var(--ease);
+    overflow:hidden;
+  }
+  #intro.phase-open{clip-path:circle(0% at 50% 50%);}
+  #introCanvas{position:absolute;inset:0;width:100%;height:100%;}
+  .intro-flash{
+    position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 50%,#fff 0%,var(--orange) 28%,var(--blue) 55%,transparent 78%);
+    opacity:0;transition:opacity .5s ease;pointer-events:none;
+  }
+  #intro.phase-flash .intro-flash{opacity:.9;}
+  .intro-brand{
+    position:relative;z-index:2;text-align:center;
+    opacity:0;transform:scale(.85);
+    transition:opacity 1.1s var(--ease),transform 1.4s var(--ease);
+  }
+  #intro.phase-stars .intro-brand{opacity:1;transform:scale(1);}
+  #intro.phase-warp .intro-brand{transform:scale(1.08);}
+  .intro-brand .ring{
+    width:96px;height:96px;margin:0 auto 22px;border-radius:50%;
+    border:2px solid transparent;
+    border-top-color:var(--orange);border-right-color:var(--blue);
+    animation:spin 1.4s linear infinite;
+  }
+  .intro-brand h2{
+    font-size:clamp(1.4rem,4vw,2.2rem);letter-spacing:.12em;text-transform:uppercase;
+    background:linear-gradient(100deg,var(--orange),#fff 45%,var(--blue-2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .intro-brand p{margin-top:10px;color:var(--muted);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .intro-skip{
+    position:absolute;bottom:28px;right:28px;z-index:3;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);
+    color:var(--muted);padding:10px 20px;border-radius:100px;font-size:.78rem;
+    letter-spacing:.06em;text-transform:uppercase;cursor:pointer;
+    transition:.3s;opacity:0;
+  }
+  #intro.phase-stars .intro-skip{opacity:1;}
+  .intro-skip:hover{color:#fff;border-color:#fff;}
+
+  /* ---------- nav ---------- */
+  nav.navbar{
+    position:fixed;top:0;left:0;width:100%;z-index:500;
+    padding:18px 0;transition:.4s;
+  }
+  nav.navbar.scrolled{
+    padding:12px 0;background:rgba(5, 2, 8, 0.85);backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.07);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+  
+  .logo-img {
+    height: 48px; width: auto; border-radius: 8px;
+    transition: transform 0.3s var(--ease), box-shadow 0.3s;
+    background-color: var(--orange);
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+  }
+  .logo-img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.6);
+  }
+
+  .nav-links{display:flex;align-items:center;gap:34px;}
+  .nav-links a{font-size:.85rem;font-weight:600;letter-spacing:.03em;color:var(--muted);transition:.3s;position:relative;}
+  .nav-links a:hover{color:#fff;}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--blue));transition:.3s;}
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{display:flex;align-items:center;gap:18px;}
+  .nav-cta .btn{padding:11px 24px;font-size:.75rem;}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:20;}
+  .burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s;}
+
+  /* ---------- hero ---------- */
+  #hero{
+    position:relative;min-height:100svh;display:flex;align-items:center;
+    overflow:hidden;padding-top:90px;
+  }
+  .hero-video-wrap{position:absolute;inset:0;z-index:0;}
+  .hero-video-wrap video{width:100%;height:100%;object-fit:cover;filter:saturate(1.2) brightness(.6); opacity: 0.6;}
+  .hero-overlay{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 50% 30%,rgba(5,2,8,.1) 0%,rgba(5,2,8,.7) 60%,var(--black) 100%),
+      linear-gradient(180deg,rgba(5,2,8,.3) 0%,rgba(5,2,8,.2) 40%,var(--black) 100%);
+  }
+  .hero-content{position:relative;z-index:2;text-align:center;padding:60px 0 90px;}
+  .hero-content h1{
+    font-size:clamp(2.4rem,7vw,5.2rem);text-transform:uppercase;line-height:1.05;
+    margin:14px 0 22px;
+  }
+  .hero-content h1 span{
+    display:block;
+    background:linear-gradient(100deg,var(--orange) 10%,#fff 45%,var(--blue-2) 85%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 30px rgba(255,140,0,0.4));
+  }
+  .hero-content p.lead{
+    max-width:680px;margin:0 auto 38px;color:var(--muted);font-size:1.08rem;
+  }
+  .hero-btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:60px;}
+  .hero-stats{display:flex;justify-content:center;gap:clamp(20px,5vw,60px);flex-wrap:wrap;}
+  .hero-stats .stat b{
+    display:block;font-size:clamp(1.6rem,3vw,2.3rem);font-weight:900;
+    background:linear-gradient(100deg,var(--blue-2),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero-stats .stat span{font-size:.78rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;}
+  .scroll-cue{
+    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;
+    display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted-2);
+    font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  }
+  .scroll-cue .dot-line{width:1px;height:34px;background:linear-gradient(var(--orange),var(--blue));position:relative;overflow:hidden;}
+  .scroll-cue .dot-line::after{content:"";position:absolute;top:-10px;left:0;width:100%;height:10px;background:#fff;animation:cueDrop 1.8s ease-in-out infinite;}
+  @keyframes cueDrop{0%{top:-10px;}100%{top:34px;}}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(46px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+  .reveal.in-view{opacity:1;transform:none;}
+
+  section{position:relative;z-index:2;padding:120px 0;} 
+
+  /* ---------- about ---------- */
+  #about .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+  #about .about-copy p{color:var(--muted);margin-bottom:18px;font-size:1.02rem;}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .stat-card{
+    background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);
+    padding:26px 22px;backdrop-filter:blur(10px);transition:.4s var(--ease);
+  }
+  .stat-card:hover{transform:translateY(-6px);border-color:var(--blue);box-shadow:0 14px 40px -14px var(--blue-glow);}
+  .stat-card b{
+    display:block;font-size:2.2rem;font-weight:900;margin-bottom:6px;
+    background:linear-gradient(100deg,var(--orange),var(--blue-2));-webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .stat-card span{color:var(--muted);font-size:.85rem;}
+
+  /* ---------- why ---------- */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:54px;}
+  .why-card{
+    background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);
+    padding:32px 24px;text-align:left;transition:.45s var(--ease);position:relative;overflow:hidden;
+  }
+  .why-card::before{
+    content:"";position:absolute;inset:0;opacity:0;transition:.45s;
+    background:radial-gradient(circle at 30% 0%,rgba(255,140,0,0.3),transparent 60%);
+  }
+  .why-card:hover{transform:translateY(-8px);border-color:rgba(255,255,255,.25);}
+  .why-card:hover::before{opacity:.5;}
+  .why-icon{
+    width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;
+    background:linear-gradient(135deg,var(--orange),var(--blue));margin-bottom:20px;
+    color: #000;
+  }
+  .why-card h3{font-size:1.08rem;text-transform:uppercase;margin-bottom:10px;letter-spacing:.02em;}
+  .why-card p{color:var(--muted);font-size:.92rem;}
+
+  /* ---------- departments ---------- */
+  .dept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px;}
+  .dept-card{
+    background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+    border:1px solid var(--card-border);border-radius:var(--radius);padding:30px 26px;
+    transition:.45s var(--ease);position:relative;
+  }
+  .dept-card:hover{transform:translateY(-8px) scale(1.01);border-color:var(--orange);box-shadow:0 20px 50px -20px rgba(255,140,0,0.4);}
+  .dept-tag{
+    display:inline-block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+    padding:5px 12px;border-radius:100px;background:rgba(76,201,240,.14);color:var(--blue-2);
+    border:1px solid rgba(76,201,240,.3);margin-bottom:16px;
+  }
+  .dept-card h3{font-size:1.15rem;text-transform:uppercase;margin-bottom:10px;}
+  .dept-card p{color:var(--muted);font-size:.9rem;margin-bottom:16px;}
+  .dept-card .slots{font-size:.78rem;color:var(--muted-2);border-top:1px solid var(--card-border);padding-top:14px;}
+  .dept-card .slots b{color:#fff;}
+
+  /* ---------- HIERARCHICAL CORE TEAM (VERTICAL COLUMNS) ---------- */
+  .team-wrapper {
+    margin-top: 54px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  /* Cấp 1: Ban Chủ Nhiệm (To và nổi bật nhất) */
+  .tier-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .team-card.leader-card {
+    background: linear-gradient(160deg, rgba(255,140,0,0.15), rgba(255,255,255,0.03));
+    border: 2px solid rgba(255,140,0,0.5);
+    border-radius: var(--radius);
+    padding: 36px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 40px -10px rgba(255,140,0,0.25);
+    transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  .team-card.leader-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 50px -10px rgba(255,140,0,0.4);
+  }
+  .team-card.leader-card .team-avatar {
+    width: 90px; height: 90px; font-size: 2.3rem;
+    background: linear-gradient(135deg, var(--orange), #fff);
+    box-shadow: 0 0 25px rgba(255,140,0,0.6);
+  }
+  .team-card.leader-card .team-name {
+    font-size: 1.25rem;
+    color: #fff;
+  }
+  .team-card.leader-card .team-role {
+    font-size: 0.9rem;
+    color: var(--orange);
+    font-weight: 800;
+  }
+
+  /* Cấp 2: Các Trưởng/Phó ban chuyên môn */
+  .tier-2-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+  .team-card.member-card {
+    background: linear-gradient(160deg, rgba(255,255,255,.05), rgba(255,255,255,.015));
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 26px 16px;
+    text-align: center;
+    transition: .4s var(--ease);
+  }
+  .team-card.member-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--blue-2);
+    box-shadow: 0 10px 30px -10px rgba(76,201,240,0.3);
+  }
+  .team-card.member-card .team-avatar {
+    width: 65px; height: 65px; font-size: 1.5rem;
+    background: linear-gradient(135deg, var(--blue-2), var(--blue));
+    color: #fff;
+    box-shadow: 0 0 15px rgba(76,201,240,0.3);
+  }
+  .team-card.member-card .team-name {
+    font-size: 0.95rem;
+  }
+  .team-card.member-card .team-role {
+    font-size: 0.75rem;
+    color: var(--blue-2);
+  }
+
+  /* Huy hiệu nhỏ trên đầu thẻ */
+  .badge-tag {
+    position: absolute;
+    top: 12px; right: 12px;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.1);
+    padding: 3px 10px;
+    border-radius: 20px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ---------- timeline ---------- */
+  .timeline{position:relative;margin-top:70px;padding-left:6px;}
+  .timeline::before{
+    content:"";position:absolute;left:29px;top:8px;bottom:8px;width:2px;
+    background:linear-gradient(var(--orange),var(--blue-2));opacity:.5;
+  }
+  .tl-item{display:flex;gap:28px;padding-bottom:52px;position:relative;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-dot{
+    flex:none;width:60px;height:60px;border-radius:50%;
+    background:var(--black-3);border:2px solid var(--orange);display:grid;place-items:center;
+    font-weight:900;color:#fff;position:relative;z-index:1;transition:.4s;
+  }
+  .tl-item:nth-child(even) .tl-dot{border-color:var(--blue);}
+  .tl-item.in-view .tl-dot{box-shadow:0 0 0 8px rgba(255,140,0,.15);}
+  .tl-body h3{font-size:1.3rem;text-transform:uppercase;margin-bottom:12px; color:#fff;}
+  .tl-date{color:var(--orange);font-size:.9rem;font-weight:700;letter-spacing:.04em;margin-bottom:12px;display:block;}
+  .tl-body ul { margin-left: 15px; color:var(--muted); font-size:.95rem; }
+  .tl-body ul li { margin-bottom: 8px; position:relative; list-style-type: disc; }
+  .tl-body ul li strong { color: var(--blue-2); }
+
+  /* ---------- cta ---------- */
+  #cta{
+    position:relative;text-align:center;overflow:hidden;
+    border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);
+  }
+  #cta::before{
+    content:"";position:absolute;inset:-20%;
+    background:radial-gradient(circle at 30% 30%,rgba(255,140,0,0.3),transparent 55%),
+               radial-gradient(circle at 75% 70%,var(--blue-glow),transparent 55%);
+    opacity:.5;filter:blur(30px);
+  }
+  .cta-inner{position:relative;z-index:1;}
+  .cta-inner h2{font-size:clamp(2rem,5vw,3.4rem);text-transform:uppercase;margin-bottom:18px;}
+  .cta-inner p{color:var(--muted);max-width:560px;margin:0 auto 34px;}
+  .deadline-badge{
+    display:inline-flex;align-items:center;gap:10px;margin-bottom:30px;
+    background:rgba(255,140,0,.1);border:1px solid rgba(255,140,0,.35);color:#ffcc80;
+    padding:10px 22px;border-radius:100px;font-size:.82rem;font-weight:600;letter-spacing:.03em;
+  }
+  .cta-btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+
+  /* ---------- footer ---------- */
+  footer{padding:60px 0 30px;position:relative;z-index:1;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--card-border);}
+  .footer-brand p{color:var(--muted);margin-top:14px;font-size:.9rem;max-width:320px;}
+  .footer-col h4{font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;color:var(--muted-2);}
+  .footer-col a,.footer-col p{display:block;color:var(--muted);font-size:.88rem;margin-bottom:10px;transition:.3s;}
+  .footer-col a:hover{color:var(--blue-2);}
+  .socials{display:flex;gap:12px;margin-top:16px;}
+  .socials a{
+    width:38px;height:38px;border-radius:50%;border:1px solid var(--card-border);
+    display:grid;place-items:center;font-size:.95rem;transition:.3s;
+  }
+  .socials a:hover{background:linear-gradient(135deg,var(--orange),var(--blue));border-color:transparent;transform:translateY(-3px); color:#000;}
+  .footer-bottom{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted-2);font-size:.8rem;}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:980px){
+    .about-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .dept-grid{grid-template-columns:1fr;}
+    .tier-1{grid-template-columns:1fr;}
+    .tier-2-grid{grid-template-columns:1fr 1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:760px){
+    .nav-links,.nav-cta .btn-ghost{display:none;}
+    .burger{display:flex;}
+    nav.navbar.nav-open .nav-links{
+      display:flex;position:fixed;inset:0;background:rgba(5,2,8,.97);
+      flex-direction:column;justify-content:center;align-items:center;gap:34px;
+      backdrop-filter:blur(14px);
+    }
+    nav.navbar.nav-open .nav-links a{font-size:1.2rem;}
+    .why-grid{grid-template-columns:1fr;}
+    .tier-2-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:30px;}
+    .hero-stats{gap:26px;}
+    section{padding:80px 0;}
+    .tl-item{gap:18px;}
+    .tl-dot{width:48px;height:48px;font-size:.85rem;}
+    .planet-1 { width: 250px; height: 250px; }
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation-duration:.01ms !important;transition-duration:.01ms !important;}
+  }
+</style>
+</head>
+<body class="intro-active">
+
+  <!-- NEBULA BACKGROUND LAYER -->
+  <div class="nebula-bg"></div>
+
+  <!-- ================= INTRO ================= -->
+  <div id="intro">
+    <canvas id="introCanvas"></canvas>
+    <div class="intro-flash"></div>
+    <div class="intro-brand">
+      <div class="ring"></div>
+      <h2>Business Economics Club</h2>
+      <p>Đang mở cánh cửa vũ trụ…</p>
+    </div>
+    <button class="intro-skip" id="skipIntro">Bỏ qua ⏭</button>
+  </div>
+
+  <!-- THIÊN HÀ SAO CHUYỂN ĐỘNG -->
+  <canvas id="bgStars"></canvas>
+  
+  <!-- CÁC HÀNH TINH 3D ĐỘNG -->
+  <div class="cosmic-elements" id="cosmicScene">
+    <div class="planet planet-1" id="planet1"></div>
+    <div class="planet planet-2" id="planet2"></div>
+    <div class="planet planet-3" id="planet3"></div>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="logo">
+        <img src="F:\CLB\LOGOBEC-01.png" alt="BEC Logo" class="logo-img">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#why">Vì sao gia nhập</a></li>
+        <li><a href="#departments">Các ban</a></li>
+        <li><a href="#core-team">Ban điều hành</a></li>
+        <li><a href="#timeline">Lộ trình</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#cta" class="btn btn-ghost">Liên hệ</a>
+        <a href="https://forms.gle/eNBh8zoqFYfnvEcR7" target="_blank" class="btn btn-primary">Đăng ký ngay</a>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section id="hero">
+    <div class="hero-video-wrap">
+      <video autoplay muted loop playsinline
+        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='40%25' r='80%25'%3E%3Cstop offset='0%25' stop-color='%23120a24'/%3E%3Cstop offset='45%25' stop-color='%233d0f24'/%3E%3Cstop offset='100%25' stop-color='%23050208'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='800' height='600' fill='url(%23g)'/%3E%3C/svg%3E">
+        <source src="https://assets.mixkit.co/videos/31596/31596-360.mp4" type="video/mp4">
+        <source src="https://assets.mixkit.co/videos/14145/14145-360.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="eyebrow" style="justify-content:center;">Mùa tuyển thành viên 2026</div>
+      <h1>Khám phá<span>Vũ Trụ Kinh Tế</span>cùng BEC</h1>
+      <p class="lead">Business Economics Club trực thuộc Đại học FPT TP.HCM — nơi những ý tưởng kinh doanh bừng sáng như các vì sao. Gia nhập một hành trình khám phá tri thức, kết nối và trải nghiệm thực chiến.</p>
+      <div class="hero-btns">
+        <a href="https://forms.gle/eNBh8zoqFYfnvEcR7" target="_blank" class="btn btn-primary">🚀 Đăng ký ngay</a>
+        <a href="#about" class="btn btn-ghost">Tìm hiểu thêm</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>50+</b><span>Thành viên</span></div>
+        <div class="stat"><b>20+</b><span>Sự kiện</span></div>
+        <div class="stat"><b>20+</b><span>Đối tác</span></div>
+        <div class="stat"><b>3</b><span>Ban chuyên môn</span></div>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><span>Cuộn xuống</span><div class="dot-line"></div></div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-copy reveal">
+        <div class="eyebrow">Giới thiệu CLB</div>
+        <h2 class="section-title">BEC là ai?</h2>
+        <p>Business Economics Club (BEC) là câu lạc bộ kinh tế trực thuộc <strong>Đại học FPT TP.HCM</strong> — mái nhà chung của những sinh viên đam mê kinh tế, tài chính và kinh doanh. Chúng mình tin rằng mỗi thành viên là một vì sao — và khi kết nối lại, tạo nên một dải ngân hà tri thức rực rỡ.</p>
+        <p>Từ những buổi workshop chuyên sâu, các cuộc thi học thuật, đến những dự án hợp tác cùng doanh nghiệp thực tế, BEC là nơi bạn biến ý tưởng thành hành động, kiến thức thành trải nghiệm.</p>
+        <a href="#departments" class="btn btn-ghost">Khám phá các ban →</a>
+      </div>
+      <div class="stat-grid reveal">
+        <div class="stat-card"><b>50+</b><span>Thành viên năng động</span></div>
+        <div class="stat-card"><b>25+</b><span>Chỉ tiêu tuyển dụng đợt này</span></div>
+        <div class="stat-card"><b>20+</b><span>Sự kiện quy mô lớn/nhỏ</span></div>
+        <div class="stat-card"><b>20+</b><span>Doanh nghiệp đối tác</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY JOIN ================= -->
+  <section id="why">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">Lý do gia nhập</div>
+        <h2 class="section-title">Vì sao nên bước vào<br>vũ trụ BEC?</h2>
+        <p class="section-sub" style="margin-inline:auto;">Bốn lý do khiến hàng chục sinh viên FPTU chọn đồng hành cùng chúng mình mỗi năm.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal"><div class="why-icon">📈</div><h3>Kỹ năng chuyên môn</h3><p>Trau dồi kiến thức kinh tế, truyền thông, đối ngoại qua các buổi training thực chiến.</p></div>
+        <div class="why-card reveal"><div class="why-icon">🌐</div><h3>Mạng lưới quan hệ</h3><p>Kết nối với 50+ thành viên, cựu thành viên và 20+ đối tác doanh nghiệp tại TP.HCM.</p></div>
+        <div class="why-card reveal"><div class="why-icon">🛰️</div><h3>Trải nghiệm thực tế</h3><p>Trực tiếp tham gia tổ chức 20+ sự kiện, dự án, talkshow chuyên ngành ngay từ năm nhất.</p></div>
+        <div class="why-card reveal"><div class="why-icon">✨</div><h3>Môi trường cởi mở</h3><p>Không gian sáng tạo mang đậm chất sinh viên FPT — nơi mọi ý tưởng đều có cơ hội toả sáng.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DEPARTMENTS ================= -->
+  <section id="departments">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">Các ban tuyển thành viên</div>
+        <h2 class="section-title">Khám phá 3 hành tinh<br>chuyên môn</h2>
+        <p class="section-sub" style="margin-inline:auto;">Chúng mình đang tìm kiếm <strong>tối thiểu 25 mảnh ghép</strong> cho 3 ban chuyên môn dưới đây. Hãy chọn nơi bạn muốn toả sáng.</p>
+      </div>
+      <div class="dept-grid">
+        <div class="dept-card reveal">
+          <span class="dept-tag">Sáng tạo</span>
+          <h3>Ban Truyền Thông</h3>
+          <p>Xây dựng hình ảnh thương hiệu, sản xuất nội dung content, quay dựng video và thiết kế ấn phẩm cho các chiến dịch của CLB.</p>
+          <div class="slots">Mục tiêu tuyển: <b>~8 - 10 bạn</b></div>
+        </div>
+        <div class="dept-card reveal">
+          <span class="dept-tag">Kết nối</span>
+          <h3>Ban Đối Ngoại</h3>
+          <p>Trở thành đại sứ kết nối, đàm phán với doanh nghiệp, diễn giả và các đối tác tài trợ để mang về nguồn lực cho các dự án lớn.</p>
+          <div class="slots">Mục tiêu tuyển: <b>~8 - 10 bạn</b></div>
+        </div>
+        <div class="dept-card reveal">
+          <span class="dept-tag">Gắn kết</span>
+          <h3>Ban Nhân Sự</h3>
+          <p>Trái tim của CLB. Theo dõi, chăm sóc thành viên, đánh giá KPI, tổ chức các hoạt động bonding nội bộ và xây dựng văn hoá BEC.</p>
+          <div class="slots">Mục tiêu tuyển: <b>~8 - 10 bạn</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CORE TEAM (HIERARCHY VIEW) ================= -->
+  <section id="core-team">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">Ban Điều Hành</div>
+        <h2 class="section-title">Phi Hành Đoàn BEC 2026</h2>
+        <p class="section-sub" style="margin-inline:auto;">Những thuyền trưởng truyền lửa và dẫn dắt con tàu BEC chinh phục không gian.</p>
+      </div>
+
+      <div class="team-wrapper">
+        <!-- TIER 1: BAN CHỦ NHIỆM (Nổi bật nhất) -->
+        <div class="tier-1 reveal">
+          <!-- Chủ nhiệm -->
+          <div class="team-card leader-card">
+            <span class="badge-tag">Lãnh đạo cấp cao</span>
+            <div class="team-avatar">👑</div>
+            <h3 class="team-name">Hồ Minh Hiển</h3>
+            <p class="team-role">Chủ Nhiệm</p>
+          </div>
+          <!-- Phó Chủ nhiệm -->
+          <div class="team-card leader-card">
+            <span class="badge-tag">Lãnh đạo cấp cao</span>
+            <div class="team-avatar">⭐</div>
+            <h3 class="team-name">Nguyễn Hải Nam</h3>
+            <p class="team-role">Phó Chủ Nhiệm</p>
+          </div>
+          <!-- Phó chủ nhiệm kiêm trưởng ban đối ngoại -->
+          <div class="team-card leader-card">
+            <span class="badge-tag">Lãnh đạo cấp cao</span>
+            <div class="team-avatar">⚡</div>
+            <h3 class="team-name">Tăng Văn Mạnh</h3>
+            <p class="team-role">Phó Chủ Nhiệm<br>Kiêm Trưởng Ban Đối Ngoại</p>
+          </div>
+        </div>
+
+        <!-- TIER 2: CÁC TRƯỞNG / PHÓ BAN CHUYÊN MÔN -->
+        <div class="tier-2-grid reveal">
+          <!-- Nhân sự -->
+          <div class="team-card member-card">
+            <span class="badge-tag">Nhân Sự</span>
+            <div class="team-avatar">🎯</div>
+            <h3 class="team-name">Bùi Đình Tiến</h3>
+            <p class="team-role">Trưởng Ban Nhân Sự</p>
+          </div>
+          <div class="team-card member-card">
+            <span class="badge-tag">Nhân Sự</span>
+            <div class="team-avatar">🤝</div>
+            <h3 class="team-name">Trần Trọng Tá</h3>
+            <p class="team-role">Phó Ban Nhân Sự</p>
+          </div>
+          <!-- Đối ngoại -->
+          <div class="team-card member-card">
+            <span class="badge-tag">Đối Ngoại</span>
+            <div class="team-avatar">🌐</div>
+            <h3 class="team-name">Nguyễn Thị Trà Giang</h3>
+            <p class="team-role">Phó Ban Đối Ngoại</p>
+          </div>
+          <!-- Truyền thông -->
+          <div class="team-card member-card">
+            <span class="badge-tag">Truyền Thông</span>
+            <div class="team-avatar">🎬</div>
+            <h3 class="team-name">Nguyễn Hoàng Thành Đạt</h3>
+            <p class="team-role">Trưởng Ban Truyền Thông</p>
+          </div>
+          <div class="team-card member-card">
+            <span class="badge-tag">Truyền Thông</span>
+            <div class="team-avatar">🎨</div>
+            <h3 class="team-name">Vương Gia Hân</h3>
+            <p class="team-role">Phó Ban Truyền Thông</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TIMELINE ================= -->
+  <section id="timeline">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">Lộ trình tuyển thành viên</div>
+        <h2 class="section-title">Hành trình du hành<br>vào BEC 2026</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-dot">01</div>
+          <div class="tl-body">
+            <span class="tl-date">GIAI ĐOẠN 1: MỞ FORM (01/10 – 31/10/2026)</span>
+            <h3>Hoạt động trên Fanpage Facebook</h3>
+            <ul>
+              <li><strong>19:00 - 28/09/2026:</strong> Đăng tải bài viết COMING SOON hâm nóng bầu không khí.</li>
+              <li><strong>19:00 - 01/10/2026:</strong> Chính thức MỞ FORM đăng ký ứng tuyển.</li>
+              <li><strong>19:00 - 20/10/2026:</strong> Chuyên mục Q&A giải đáp mọi thắc mắc về CLB.</li>
+              <li><strong>20:00 - 26/10/2026:</strong> Bùng nổ Video content giới thiệu BEC.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot">02</div>
+          <div class="tl-body">
+            <span class="tl-date">GIAI ĐOẠN 2: PHỎNG VẤN (15/11 – 16/11/2026)</span>
+            <h3>Gặp Gỡ Trực Tiếp</h3>
+            <ul>
+              <li><strong>15 - 16/11/2026:</strong> Phỏng vấn trực tiếp các ứng viên để chọn ra 25+ mảnh ghép phù hợp nhất.</li>
+              <li><strong>20:00 - 17/11/2026:</strong> Đăng tải bài viết Recap tổng kết những khoảnh khắc đẹp trong buổi phỏng vấn trên Fanpage.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section id="cta">
+    <div class="container cta-inner reveal">
+      <div class="deadline-badge">⏳ Hạn điền form: 31/10/2026</div>
+      <h2>Sẵn sàng du hành<br>cùng BEC?</h2>
+      <p>Đừng để hành trình vũ trụ kinh tế trôi qua mà không có bạn. Đăng ký ngay hôm nay để trở thành một phần của dải ngân hà BEC FPTU.</p>
+      <div class="cta-btns">
+        <a href="https://forms.gle/eNBh8zoqFYfnvEcR7" target="_blank" class="btn btn-primary">🚀 Điền form đăng ký</a>
+        <a href="https://www.facebook.com/bec.fptu" target="_blank" class="btn btn-ghost">💬 Inbox Fanpage</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="logo">
+            <img src="F:\CLB\LOGOBEC-01.png" alt="BEC Logo" class="logo-img">
+          </a>
+          <p>Business Economics Club — Nơi những ý tưởng kinh tế bừng sáng như các vì sao. Cùng chúng mình khám phá vũ trụ kinh doanh tại Đại học FPT.</p>
+          <div class="socials">
+            <a href="https://www.facebook.com/bec.fptu" target="_blank" aria-label="Facebook">f</a>
+            <a href="mailto:bec.fptuhcm@gmail.com" aria-label="Email">✉</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Khám phá</h4>
+          <a href="#about">Giới thiệu CLB</a>
+          <a href="#departments">Các ban tuyển dụng</a>
+          <a href="#core-team">Ban điều hành</a>
+          <a href="#timeline">Lộ trình tuyển</a>
+        </div>
+        <div class="footer-col">
+          <h4>Liên hệ</h4>
+          <p><strong>Email:</strong> bec.fptuhcm@gmail.com</p>
+          <p><strong>Fanpage:</strong> facebook.com/bec.fptu</p>
+          <p><strong>Địa điểm:</strong> Lô E2a-7, Đường D1, Khu Công nghệ cao, P. Long Thạnh Mỹ, TP. Thủ Đức, TP. Hồ Chí Minh</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Business Economics Club FPTU HCM. All rights reserved.</span>
+        <span>Made with 💫 for future explorers.</span>
+      </div>
+    </div>
+  </footer>
+
+<script>
+(function(){
+  'use strict';
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------------- INTERACTIVE GALAXY & SHOOTING STARS ---------------- */
+  var bgCanvas = document.getElementById('bgStars');
+  var bgCtx = bgCanvas.getContext('2d');
+  var bgStars = [];
+  var shootingStars = [];
+  var W, H;
+  
+  var mouseX = window.innerWidth / 2;
+  var mouseY = window.innerHeight / 2;
+  var targetMouseX = mouseX;
+  var targetMouseY = mouseY;
+
+  window.addEventListener('mousemove', function(e) {
+    targetMouseX = e.clientX;
+    targetMouseY = e.clientY;
+  });
+
+  function resizeBg(){
+    W = bgCanvas.width = window.innerWidth;
+    H = bgCanvas.height = document.documentElement.scrollHeight;
+  }
+  
+  function initBgStars(){
+    resizeBg();
+    var count = Math.min(500, Math.floor((W*H)/4000)); 
+    bgStars = [];
+    for(var i=0;i<count;i++){
+      var r = Math.random();
+      bgStars.push({
+        angle: Math.random() * Math.PI * 2,
+        radius: Math.random() * Math.max(W, H) * 1.5,
+        speed: (Math.random() * 0.001 + 0.0001) * (r < 0.1 ? 2.5 : 1), 
+        size: Math.random() * 2 + 0.3,
+        hue: Math.random() < 0.2 ? (Math.random()<0.5?'#ff8c00':'#4cc9f0') : '#ffffff',
+        baseAlpha: Math.random() * 0.7 + 0.2,
+        z: Math.random() * 150 
+      });
+    }
+  }
+
+  function maybeSpawnShootingStar(){
+    if(reducedMotion) return;
+    if(Math.random() < 0.015 && shootingStars.length < 4){ 
+      var startX = Math.random()*W + W*0.3;
+      var speedMulti = Math.random() * 2 + 1.5;
+      shootingStars.push({
+        x: startX, 
+        y: -50, 
+        vx: (5+Math.random()*4) * speedMulti, 
+        vy: (7+Math.random()*4) * speedMulti, 
+        life: 1,
+        color: Math.random() < 0.5 ? '#fff' : '#ff8c00'
+      });
+    }
+  }
+
+  function drawBg(){
+    bgCtx.fillStyle = 'rgba(5, 2, 8, 0.1)'; 
+    bgCtx.fillRect(0,0,W,H);
+    
+    mouseX += (targetMouseX - mouseX) * 0.05;
+    mouseY += (targetMouseY - mouseY) * 0.05;
+    
+    var scrollOffset = window.scrollY * 0.3;
+    var cx = W / 2 + (mouseX - W/2) * 0.04; 
+    var cy = window.innerHeight / 2 - scrollOffset + (mouseY - window.innerHeight/2) * 0.04; 
+
+    for(var i=0;i<bgStars.length;i++){
+      var s = bgStars[i];
+      s.angle += s.speed;
+      
+      var dx = targetMouseX - cx;
+      var dy = targetMouseY - (cy + scrollOffset);
+      var distanceToMouse = Math.sqrt(dx*dx + dy*dy);
+      var pull = Math.max(0, 1 - distanceToMouse / 600) * 15;
+
+      var perspective = 150 / (150 + s.z);
+      var x = cx + (Math.cos(s.angle) * s.radius) * perspective;
+      var y = cy + (Math.sin(s.angle) * s.radius * 0.8) * perspective;
+      
+      if(pull > 0 && !reducedMotion) {
+        x -= dx * pull * 0.0005;
+        y -= dy * pull * 0.0005;
+      }
+      
+      var alpha = s.baseAlpha + Math.sin(s.angle * 20) * 0.4;
+      bgCtx.globalAlpha = Math.max(0, Math.min(1, alpha));
+      
+      if(s.size > 1.5) {
+        bgCtx.shadowBlur = 12;
+        bgCtx.shadowColor = s.hue;
+      } else {
+        bgCtx.shadowBlur = 0;
+      }
+
+      bgCtx.fillStyle = s.hue;
+      bgCtx.beginPath();
+      bgCtx.arc(x, y, s.size * perspective, 0, Math.PI*2);
+      bgCtx.fill();
+    }
+    
+    bgCtx.globalAlpha = 1;
+    bgCtx.shadowBlur = 0;
+    
+    maybeSpawnShootingStar();
+    for(var j=shootingStars.length-1;j>=0;j--){
+      var sh = shootingStars[j];
+      
+      var grad = bgCtx.createLinearGradient(sh.x, sh.y, sh.x - sh.vx*12, sh.y - sh.vy*12);
+      grad.addColorStop(0, sh.color);
+      grad.addColorStop(1, 'rgba(5,2,8,0)');
+      
+      bgCtx.strokeStyle = grad;
+      bgCtx.lineWidth = 2.5;
+      bgCtx.lineCap = 'round';
+      bgCtx.beginPath();
+      bgCtx.moveTo(sh.x, sh.y);
+      bgCtx.lineTo(sh.x - sh.vx*12, sh.y - sh.vy*12);
+      bgCtx.stroke();
+      
+      sh.x -= sh.vx; sh.y += sh.vy; sh.life -= 0.02;
+      if(sh.life <= 0 || sh.y > H || sh.x < 0) shootingStars.splice(j,1);
+    }
+    requestAnimationFrame(drawBg);
+  }
+  
+  initBgStars();
+  requestAnimationFrame(drawBg);
+  window.addEventListener('resize', function(){ initBgStars(); });
+
+  /* ---------------- Parallax Hành tinh 3D ---------------- */
+  if(!reducedMotion && window.matchMedia('(pointer:fine)').matches){
+    var planet1 = document.getElementById('planet1');
+    var planet2 = document.getElementById('planet2');
+    var planet3 = document.getElementById('planet3');
+    
+    window.addEventListener('mousemove', function(e){
+      var x = (e.clientX / window.innerWidth - 0.5);
+      var y = (e.clientY / window.innerHeight - 0.5);
+      
+      if(planet1) planet1.style.transform = `translate(${x * 40}px, ${y * 40}px)`;
+      if(planet2) planet2.style.transform = `translate(${x * -60}px, ${y * -60}px)`;
+    });
+  }
+
+  /* ---------------- intro sequence ---------------- */
+  var introEl = document.getElementById('intro');
+  var introCanvas = document.getElementById('introCanvas');
+  var iCtx = introCanvas.getContext('2d');
+  var iW, iH, iParticles = [];
+  var warping = false;
+  var introRAF = null;
+
+  function resizeIntro(){
+    iW = introCanvas.width = window.innerWidth;
+    iH = introCanvas.height = window.innerHeight;
+  }
+  function initIntroParticles(){
+    resizeIntro();
+    iParticles = [];
+    var count = reducedMotion ? 0 : 250;
+    for(var i=0;i<count;i++){
+      var angle = Math.random()*Math.PI*2;
+      var radius = Math.random()*Math.max(iW,iH)*0.6 + 40;
+      iParticles.push({
+        angle: angle,
+        radius: radius,
+        speed: Math.random()*0.004+0.001,
+        size: Math.random()*1.8+0.4,
+        color: Math.random()<0.5 ? '255,140,0' : '76,201,240'
+      });
+    }
+  }
+  function drawIntro(){
+    iCtx.fillStyle = 'rgba(5,2,8,0.35)';
+    iCtx.fillRect(0,0,iW,iH);
+    var cx = iW/2, cy = iH/2;
+    for(var i=0;i<iParticles.length;i++){
+      var p = iParticles[i];
+      p.angle += p.speed * (warping ? 12 : 1);
+      p.radius -= warping ? (p.radius*0.012 + 0.8) : 0.02;
+      if(p.radius < 4){ p.radius = Math.max(iW,iH)*0.6; }
+      var x = cx + Math.cos(p.angle)*p.radius;
+      var y = cy + Math.sin(p.angle)*p.radius*0.72;
+      var alpha = Math.min(1, (1 - p.radius/(Math.max(iW,iH)*0.65)) + 0.15);
+      iCtx.fillStyle = 'rgba('+p.color+','+Math.max(0.08,alpha)+')';
+      iCtx.beginPath();
+      iCtx.arc(x,y,p.size*(warping?1.8:1),0,Math.PI*2);
+      iCtx.fill();
+    }
+    introRAF = requestAnimationFrame(drawIntro);
+  }
+
+  function startIntro(){
+    if(reducedMotion){ finishIntro(true); return; }
+    initIntroParticles();
+    drawIntro();
+    var t1 = setTimeout(function(){ introEl.classList.add('phase-stars'); }, 60);
+    var t2 = setTimeout(function(){ introEl.classList.add('phase-warp'); warping = true; }, 1700);
+    var t3 = setTimeout(function(){ introEl.classList.add('phase-flash'); }, 2650);
+    var t4 = setTimeout(function(){ finishIntro(false); }, 3050);
+    introEl._timers = [t1,t2,t3,t4];
+  }
+
+  function finishIntro(instant){
+    if(introEl._timers) introEl._timers.forEach(clearTimeout);
+    introEl.classList.add('phase-open');
+    var delay = instant ? 0 : 1100;
+    setTimeout(function(){
+      introEl.style.display = 'none';
+      document.body.classList.remove('intro-active');
+      document.body.classList.add('loaded');
+      if(introRAF) cancelAnimationFrame(introRAF);
+    }, delay);
+  }
+
+  document.getElementById('skipIntro').addEventListener('click', function(){ finishIntro(false); });
+  window.addEventListener('resize', function(){ if(!document.body.classList.contains('loaded')) resizeIntro(); });
+
+  startIntro();
+
+  /* ---------------- scroll reveal ---------------- */
+  var revealEls = document.querySelectorAll('.reveal, .tl-item');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry, idx){
+      if(entry.isIntersecting){
+        setTimeout(function(){ entry.target.classList.add('in-view'); }, (idx%3)*90);
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+  revealEls.forEach(function(el){ io.observe(el); });
+
+  /* ---------------- navbar scroll state ---------------- */
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 40) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+
+  /* ---------------- mobile burger ---------------- */
+  var burger = document.getElementById('burger');
+  burger.addEventListener('click', function(){
+    navbar.classList.toggle('nav-open');
+  });
+  document.querySelectorAll('#navLinks a').forEach(function(a){
+    a.addEventListener('click', function(){ navbar.classList.remove('nav-open'); });
+  });
+
+})();
+</script>
+</body>
+</html>
