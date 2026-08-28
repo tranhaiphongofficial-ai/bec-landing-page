@@ -340,6 +340,75 @@
   .why-card h3{font-size:1.08rem;text-transform:uppercase;margin-bottom:10px;letter-spacing:.02em;}
   .why-card p{color:var(--muted);font-size:.92rem;}
 
+  /* ---------- achievements (SUMMER 2026) ---------- */
+  .achieve-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 54px;
+  }
+  .achieve-card {
+    background: linear-gradient(160deg, rgba(255,255,255,.05), rgba(255,255,255,.015));
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: .4s var(--ease);
+  }
+  .achieve-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--orange);
+    box-shadow: 0 12px 35px -10px rgba(255,140,0,0.3);
+  }
+  .achieve-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .achieve-num {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--orange);
+    background: rgba(255,140,0,0.1);
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: grid; place-items: center;
+    border: 1px solid rgba(255,140,0,0.3);
+  }
+  .achieve-title {
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: .02em;
+  }
+  .achieve-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .achieve-img-box {
+    height: 140px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.06);
+    border: 1px dashed rgba(255,255,255,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-2);
+    font-size: 0.78rem;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  .achieve-img-box::before {
+    content: "🌌";
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+    opacity: 0.5;
+  }
+
   /* ---------- departments ---------- */
   .dept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px;}
   .dept-card{
@@ -358,15 +427,13 @@
   .dept-card .slots{font-size:.78rem;color:var(--muted-2);border-top:1px solid var(--card-border);padding-top:14px;}
   .dept-card .slots b{color:#fff;}
 
-  /* ---------- HIERARCHICAL CORE TEAM (VERTICAL COLUMNS) ---------- */
+  /* ---------- CORE TEAM ---------- */
   .team-wrapper {
     margin-top: 54px;
     display: flex;
     flex-direction: column;
     gap: 40px;
   }
-  
-  /* Cấp 1: Ban Chủ Nhiệm (To và nổi bật nhất) */
   .tier-1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -392,17 +459,9 @@
     background: linear-gradient(135deg, var(--orange), #fff);
     box-shadow: 0 0 25px rgba(255,140,0,0.6);
   }
-  .team-card.leader-card .team-name {
-    font-size: 1.25rem;
-    color: #fff;
-  }
-  .team-card.leader-card .team-role {
-    font-size: 0.9rem;
-    color: var(--orange);
-    font-weight: 800;
-  }
+  .team-card.leader-card .team-name { font-size: 1.25rem; color: #fff; }
+  .team-card.leader-card .team-role { font-size: 0.9rem; color: var(--orange); font-weight: 800; }
 
-  /* Cấp 2: Các Trưởng/Phó ban chuyên môn */
   .tier-2-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -427,25 +486,15 @@
     color: #fff;
     box-shadow: 0 0 15px rgba(76,201,240,0.3);
   }
-  .team-card.member-card .team-name {
-    font-size: 0.95rem;
-  }
-  .team-card.member-card .team-role {
-    font-size: 0.75rem;
-    color: var(--blue-2);
-  }
+  .team-card.member-card .team-name { font-size: 0.95rem; }
+  .team-card.member-card .team-role { font-size: 0.75rem; color: var(--blue-2); }
 
-  /* Huy hiệu nhỏ trên đầu thẻ */
   .badge-tag {
-    position: absolute;
-    top: 12px; right: 12px;
-    font-size: 0.65rem;
-    text-transform: uppercase;
+    position: absolute; top: 12px; right: 12px;
+    font-size: 0.65rem; text-transform: uppercase;
     background: rgba(255,255,255,0.1);
-    padding: 3px 10px;
-    border-radius: 20px;
-    color: var(--muted);
-    letter-spacing: 0.05em;
+    padding: 3px 10px; border-radius: 20px;
+    color: var(--muted); letter-spacing: 0.05em;
   }
 
   /* ---------- timeline ---------- */
@@ -463,11 +512,9 @@
   }
   .tl-item:nth-child(even) .tl-dot{border-color:var(--blue);}
   .tl-item.in-view .tl-dot{box-shadow:0 0 0 8px rgba(255,140,0,.15);}
-  .tl-body h3{font-size:1.3rem;text-transform:uppercase;margin-bottom:12px; color:#fff;}
-  .tl-date{color:var(--orange);font-size:.9rem;font-weight:700;letter-spacing:.04em;margin-bottom:12px;display:block;}
-  .tl-body ul { margin-left: 15px; color:var(--muted); font-size:.95rem; }
-  .tl-body ul li { margin-bottom: 8px; position:relative; list-style-type: disc; }
-  .tl-body ul li strong { color: var(--blue-2); }
+  .tl-body h3{font-size:1.2rem;text-transform:uppercase;margin-bottom:10px; color:#fff;}
+  .tl-date{color:var(--orange);font-size:.9rem;font-weight:700;letter-spacing:.04em;margin-bottom:8px;display:block;}
+  .tl-body p { color: var(--muted); font-size: 0.95rem; }
 
   /* ---------- cta ---------- */
   #cta{
@@ -510,6 +557,7 @@
     .about-grid{grid-template-columns:1fr;}
     .why-grid{grid-template-columns:1fr 1fr;}
     .dept-grid{grid-template-columns:1fr;}
+    .achieve-grid{grid-template-columns:1fr;}
     .tier-1{grid-template-columns:1fr;}
     .tier-2-grid{grid-template-columns:1fr 1fr;}
     .footer-grid{grid-template-columns:1fr 1fr;}
@@ -572,7 +620,7 @@
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">Giới thiệu</a></li>
-        <li><a href="#why">Vì sao gia nhập</a></li>
+        <li><a href="#achievements">Thành tích</a></li>
         <li><a href="#departments">Các ban</a></li>
         <li><a href="#core-team">Ban điều hành</a></li>
         <li><a href="#timeline">Lộ trình</a></li>
@@ -651,6 +699,139 @@
     </div>
   </section>
 
+  <!-- ================= ACHIEVEMENTS SUMMER 2026 ================= -->
+  <section id="achievements">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">Dấu ấn rực rỡ</div>
+        <h2 class="section-title">Thành Tích Kỳ Summer 2026</h2>
+        <p class="section-sub" style="margin-inline:auto;">Hành trình chinh phục các đấu trường học thuật và dự án thực tế của các vì sao BEC.</p>
+      </div>
+
+      <div class="achieve-grid">
+        <!-- 01 -->
+        <div class="achieve-card reveal">
+          <div class="achieve-header">
+            <div class="achieve-num">01</div>
+            <div class="achieve-title">Chung Kết CESIM ELITE VIETNAM</div>
+          </div>
+          <div class="achieve-photos">
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="achieve-card reveal">
+          <div class="achieve-header">
+            <div class="achieve-num">02</div>
+            <div class="achieve-title">Workshop NCKH Không Khó</div>
+          </div>
+          <div class="achieve-photos">
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="achieve-card reveal">
+          <div class="achieve-header">
+            <div class="achieve-num">03</div>
+            <div class="achieve-title">Professional Selling Mùa 8</div>
+          </div>
+          <div class="achieve-photos">
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="achieve-card reveal">
+          <div class="achieve-header">
+            <div class="achieve-num">04</div>
+            <div class="achieve-title">Tham gia cuộc thi Nghiên cứu Khoa học</div>
+          </div>
+          <div class="achieve-photos">
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+          </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="achieve-card reveal">
+          <div class="achieve-header">
+            <div class="achieve-num">05</div>
+            <div class="achieve-title">Cuộc thi ECON DEBATE ARENA Mùa 2</div>
+          </div>
+          <div class="achieve-photos">
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+          </div>
+        </div>
+
+        <!-- 06 -->
+        <div class="achieve-card reveal">
+          <div class="achieve-header">
+            <div class="achieve-num">06</div>
+            <div class="achieve-title">Đồng tổ chức Sự Kiện FES</div>
+          </div>
+          <div class="achieve-photos">
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+          </div>
+        </div>
+
+        <!-- 07 -->
+        <div class="achieve-card reveal">
+          <div class="achieve-header">
+            <div class="achieve-num">07</div>
+            <div class="achieve-title">Vũ Trụ Đồng Tiền</div>
+          </div>
+          <div class="achieve-photos">
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+          </div>
+        </div>
+
+        <!-- 08 -->
+        <div class="achieve-card reveal">
+          <div class="achieve-header">
+            <div class="achieve-num">08</div>
+            <div class="achieve-title">Talkshow Kỹ Năng Tranh Biện</div>
+          </div>
+          <div class="achieve-photos">
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+          </div>
+        </div>
+
+        <!-- 09 -->
+        <div class="achieve-card reveal">
+          <div class="achieve-header">
+            <div class="achieve-num">09</div>
+            <div class="achieve-title">Company Tour - FPT IS Company</div>
+          </div>
+          <div class="achieve-photos">
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="achieve-card reveal">
+          <div class="achieve-header">
+            <div class="achieve-num">10</div>
+            <div class="achieve-title">Podcast Behind The Money Mùa 1</div>
+          </div>
+          <div class="achieve-photos">
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
+            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= DEPARTMENTS ================= -->
   <section id="departments">
     <div class="container">
@@ -682,7 +863,7 @@
     </div>
   </section>
 
-  <!-- ================= CORE TEAM (HIERARCHY VIEW) ================= -->
+  <!-- ================= CORE TEAM ================= -->
   <section id="core-team">
     <div class="container">
       <div class="reveal" style="text-align:center;">
@@ -692,23 +873,19 @@
       </div>
 
       <div class="team-wrapper">
-        <!-- TIER 1: BAN CHỦ NHIỆM (Nổi bật nhất) -->
         <div class="tier-1 reveal">
-          <!-- Chủ nhiệm -->
           <div class="team-card leader-card">
             <span class="badge-tag">Lãnh đạo cấp cao</span>
             <div class="team-avatar">👑</div>
             <h3 class="team-name">Hồ Minh Hiển</h3>
             <p class="team-role">Chủ Nhiệm</p>
           </div>
-          <!-- Phó Chủ nhiệm -->
           <div class="team-card leader-card">
             <span class="badge-tag">Lãnh đạo cấp cao</span>
             <div class="team-avatar">⭐</div>
             <h3 class="team-name">Nguyễn Hải Nam</h3>
             <p class="team-role">Phó Chủ Nhiệm</p>
           </div>
-          <!-- Phó chủ nhiệm kiêm trưởng ban đối ngoại -->
           <div class="team-card leader-card">
             <span class="badge-tag">Lãnh đạo cấp cao</span>
             <div class="team-avatar">⚡</div>
@@ -717,9 +894,7 @@
           </div>
         </div>
 
-        <!-- TIER 2: CÁC TRƯỞNG / PHÓ BAN CHUYÊN MÔN -->
         <div class="tier-2-grid reveal">
-          <!-- Nhân sự -->
           <div class="team-card member-card">
             <span class="badge-tag">Nhân Sự</span>
             <div class="team-avatar">🎯</div>
@@ -732,14 +907,12 @@
             <h3 class="team-name">Trần Trọng Tá</h3>
             <p class="team-role">Phó Ban Nhân Sự</p>
           </div>
-          <!-- Đối ngoại -->
           <div class="team-card member-card">
             <span class="badge-tag">Đối Ngoại</span>
             <div class="team-avatar">🌐</div>
             <h3 class="team-name">Nguyễn Thị Trà Giang</h3>
             <p class="team-role">Phó Ban Đối Ngoại</p>
           </div>
-          <!-- Truyền thông -->
           <div class="team-card member-card">
             <span class="badge-tag">Truyền Thông</span>
             <div class="team-avatar">🎬</div>
@@ -768,25 +941,65 @@
         <div class="tl-item reveal">
           <div class="tl-dot">01</div>
           <div class="tl-body">
-            <span class="tl-date">GIAI ĐOẠN 1: MỞ FORM (01/10 – 31/10/2026)</span>
-            <h3>Hoạt động trên Fanpage Facebook</h3>
-            <ul>
-              <li><strong>19:00 - 28/09/2026:</strong> Đăng tải bài viết COMING SOON hâm nóng bầu không khí.</li>
-              <li><strong>19:00 - 01/10/2026:</strong> Chính thức MỞ FORM đăng ký ứng tuyển.</li>
-              <li><strong>19:00 - 20/10/2026:</strong> Chuyên mục Q&A giải đáp mọi thắc mắc về CLB.</li>
-              <li><strong>20:00 - 26/10/2026:</strong> Bùng nổ Video content giới thiệu BEC.</li>
-            </ul>
+            <span class="tl-date">03/09/2026</span>
+            <h3>Thông báo tuyển thành viên</h3>
+            <p>Khởi động chiến dịch mùa tuyển quân năm 2026 của BEC FPTU.</p>
           </div>
         </div>
         <div class="tl-item reveal">
           <div class="tl-dot">02</div>
           <div class="tl-body">
-            <span class="tl-date">GIAI ĐOẠN 2: PHỎNG VẤN (15/11 – 16/11/2026)</span>
-            <h3>Gặp Gỡ Trực Tiếp</h3>
-            <ul>
-              <li><strong>15 - 16/11/2026:</strong> Phỏng vấn trực tiếp các ứng viên để chọn ra 25+ mảnh ghép phù hợp nhất.</li>
-              <li><strong>20:00 - 17/11/2026:</strong> Đăng tải bài viết Recap tổng kết những khoảnh khắc đẹp trong buổi phỏng vấn trên Fanpage.</li>
-            </ul>
+            <span class="tl-date">18/09/2026</span>
+            <h3>Những điều cần lưu ý khi ứng tuyển</h3>
+            <p>Chia sẻ các tips quan trọng giúp bạn chinh phục vòng đơn thành công.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot">03</div>
+          <div class="tl-body">
+            <span class="tl-date">25/09/2026</span>
+            <h3>Tham gia BEC giúp bạn phát triển kỹ năng gì</h3>
+            <p>Bật mí những giá trị thực chiến và cơ hội phát triển bản thân tại CLB.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot">04</div>
+          <div class="tl-body">
+            <span class="tl-date">03/10/2026</span>
+            <h3>Q&A giải đáp thắc mắc khi tham gia CLB</h3>
+            <p>Giải đáp toàn bộ câu hỏi của ứng viên về lộ trình và các ban chuyên môn.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot">05</div>
+          <div class="tl-body">
+            <span class="tl-date">12/10/2026</span>
+            <h3>Countdown 24h đóng form đăng kí</h3>
+            <p>Hồi hộp đếm ngược những giờ phút cuối cùng để nộp đơn vào vũ trụ BEC.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot">06</div>
+          <div class="tl-body">
+            <span class="tl-date">15/10/2026</span>
+            <h3>Trả kết quả VÒNG ĐẦU</h3>
+            <p>Công bố danh sách các ứng viên xuất sắc bước tiếp vào vòng phỏng vấn.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot">07</div>
+          <div class="tl-body">
+            <span class="tl-date">17/10/2026</span>
+            <h3>Remind lịch phỏng vấn</h3>
+            <p>Nhắc nhở thời gian và lịch trình chi tiết cho vòng phỏng vấn trực tiếp.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot">08</div>
+          <div class="tl-body">
+            <span class="tl-date">22/10/2026</span>
+            <h3>Thông báo kết quả trúng tuyển</h3>
+            <p>Chính thức chào đón các tân binh gia nhập dải ngân hà BEC 2026!</p>
           </div>
         </div>
       </div>
@@ -796,7 +1009,7 @@
   <!-- ================= CTA ================= -->
   <section id="cta">
     <div class="container cta-inner reveal">
-      <div class="deadline-badge">⏳ Hạn điền form: 31/10/2026</div>
+      <div class="deadline-badge">⏳ Mở form đăng kí ngay</div>
       <h2>Sẵn sàng du hành<br>cùng BEC?</h2>
       <p>Đừng để hành trình vũ trụ kinh tế trôi qua mà không có bạn. Đăng ký ngay hôm nay để trở thành một phần của dải ngân hà BEC FPTU.</p>
       <div class="cta-btns">
@@ -823,9 +1036,9 @@
         <div class="footer-col">
           <h4>Khám phá</h4>
           <a href="#about">Giới thiệu CLB</a>
+          <a href="#achievements">Thành tích</a>
           <a href="#departments">Các ban tuyển dụng</a>
           <a href="#core-team">Ban điều hành</a>
-          <a href="#timeline">Lộ trình tuyển</a>
         </div>
         <div class="footer-col">
           <h4>Liên hệ</h4>
@@ -846,7 +1059,6 @@
   'use strict';
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------------- INTERACTIVE GALAXY & SHOOTING STARS ---------------- */
   var bgCanvas = document.getElementById('bgStars');
   var bgCtx = bgCanvas.getContext('2d');
   var bgStars = [];
@@ -976,7 +1188,6 @@
   requestAnimationFrame(drawBg);
   window.addEventListener('resize', function(){ initBgStars(); });
 
-  /* ---------------- Parallax Hành tinh 3D ---------------- */
   if(!reducedMotion && window.matchMedia('(pointer:fine)').matches){
     var planet1 = document.getElementById('planet1');
     var planet2 = document.getElementById('planet2');
@@ -991,7 +1202,6 @@
     });
   }
 
-  /* ---------------- intro sequence ---------------- */
   var introEl = document.getElementById('intro');
   var introCanvas = document.getElementById('introCanvas');
   var iCtx = introCanvas.getContext('2d');
@@ -1067,7 +1277,6 @@
 
   startIntro();
 
-  /* ---------------- scroll reveal ---------------- */
   var revealEls = document.querySelectorAll('.reveal, .tl-item');
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(entry, idx){
@@ -1079,14 +1288,12 @@
   }, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
   revealEls.forEach(function(el){ io.observe(el); });
 
-  /* ---------------- navbar scroll state ---------------- */
   var navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function(){
     if(window.scrollY > 40) navbar.classList.add('scrolled');
     else navbar.classList.remove('scrolled');
   });
 
-  /* ---------------- mobile burger ---------------- */
   var burger = document.getElementById('burger');
   burger.addEventListener('click', function(){
     navbar.classList.toggle('nav-open');
