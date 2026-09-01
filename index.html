@@ -455,6 +455,42 @@
     background: rgba(255,140,0,0.2);
   }
 
+  /* ---------- OPERATIONS ADVISORY / CỐ VẤN VẬN HÀNH ---------- */
+  .ops-advisory-wrapper {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .ops-card {
+    background: linear-gradient(160deg, rgba(76,201,240,0.12), rgba(10,7,20,0.9));
+    border: 2px solid rgba(76,201,240,0.4);
+    border-radius: var(--radius);
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px -10px rgba(76,201,240,0.2);
+    transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  .ops-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--blue-2);
+    box-shadow: 0 14px 40px -10px rgba(76,201,240,0.4);
+  }
+  .ops-avatar-img {
+    width: 85px; height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 14px;
+    border: 2px solid var(--blue-2);
+    box-shadow: 0 0 20px rgba(76, 201, 240, 0.4);
+    background: rgba(76,201,240,0.2);
+  }
+  .ops-card .team-name { font-size: 1.1rem; color: #fff; margin-bottom: 6px; font-weight: 800; text-transform: uppercase; }
+  .ops-card .team-role { font-size: 0.8rem; color: var(--blue-2); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+
   /* ---------- CORE TEAM ---------- */
   .team-wrapper {
     margin-top: 54px;
@@ -602,6 +638,7 @@
     .why-grid{grid-template-columns:1fr 1fr;}
     .dept-grid{grid-template-columns:1fr;}
     .achieve-grid{grid-template-columns:1fr;}
+    .ops-advisory-wrapper{grid-template-columns:1fr;}
     .tier-1{grid-template-columns:1fr;}
     .tier-2-grid{grid-template-columns:1fr 1fr;}
     .footer-grid{grid-template-columns:1fr; gap: 30px;}
@@ -617,6 +654,7 @@
     nav.navbar.nav-open .nav-links a{font-size:1.1rem;}
     .why-grid{grid-template-columns:1fr;}
     .stat-grid{grid-template-columns:1fr;}
+    .ops-advisory-wrapper{grid-template-columns:1fr;}
     .tier-1, .tier-2-grid{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;gap:24px;}
     .hero-stats{gap:20px;}
@@ -630,11 +668,6 @@
     *{animation-duration:.01ms !important;transition-duration:.01ms !important;}
   }
 
-  /* ---------- PERF: lighten the load while the intro is playing ---------- */
-  /* The nebula glow + floating planets sit behind the opaque intro overlay
-     and are invisible during the intro anyway — pausing their infinite
-     CSS animations for those ~1.8s frees up the compositor for the intro
-     canvas, which is what actually needs to stay at 60fps on phones. */
   body.intro-active .nebula-bg,
   body.intro-active .planet-1,
   body.intro-active .planet-2,
@@ -642,14 +675,7 @@
     animation-play-state:paused;
   }
 
-  /* ---------- PERF: skip layout/paint for offscreen sections ---------- */
-  /* content-visibility:auto tells the browser not to bother laying out
-     or painting these sections until they're about to scroll into view.
-     On a long page like this one (achievements gallery + team grid +
-     8-step timeline) that meaningfully cuts the work the browser does on
-     first paint, which is exactly when the intro needs its frame budget.
-     Safe no-op on browsers that don't support it (e.g. older Safari). */
-  #achievements, #core-team, #mentor, #timeline{
+  #achievements, #core-team, #mentor, #ops-advisory, #timeline{
     content-visibility:auto;
     contain-intrinsic-size:auto 1200px;
   }
@@ -693,6 +719,7 @@
         <li><a href="#achievements">Thành tích</a></li>
         <li><a href="#departments">Các ban</a></li>
         <li><a href="#mentor">Cố vấn</a></li>
+        <li><a href="#ops-advisory">Cố vấn vận hành</a></li>
         <li><a href="#core-team">Ban điều hành</a></li>
         <li><a href="#timeline">Lộ trình</a></li>
       </ul>
@@ -885,8 +912,8 @@
             <div class="achieve-title">Podcast Behind The Money Mùa 1</div>
           </div>
           <div class="achieve-photos">
-            <img src="PODCAST1.png" alt="Podcast 1" class="achieve-img" loading="lazy" decoding="async">
-            <img src="PODCAST1.png" alt="Podcast 2" class="achieve-img" loading="lazy" decoding="async">
+            <img src="TALKSHOW1.png" alt="Podcast 1" class="achieve-img" loading="lazy" decoding="async">
+            <img src="TALKSHOW2.png" alt="Podcast 2" class="achieve-img" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -935,11 +962,43 @@
 
       <div class="mentor-wrapper reveal">
         <div class="mentor-card">
-          <span class="badge-tag" style="background: var(--orange); color: #000; font-weight: 800; padding: 4px 12px;">Cố Vấn Chuyên Môn</span>
-          <img src="THAYTAM1.jpg" alt="Thầy Lê Thành Tâm" class="mentor-avatar-img" loading="lazy" decoding="async">
+          <span class="badge-tag" style="background: var(--orange); color: #000; font-weight: 800; padding: 4px 12px;">Cố Vấn Tối Cao</span>
+          <img src="THAYTAM.jpg" alt="Thầy Lê Thành Tâm" class="mentor-avatar-img" loading="lazy" decoding="async">
           <h3 class="team-name" style="font-size: 1.5rem; color: #fff; margin-bottom: 8px; font-weight: 900; text-transform: uppercase;">Thầy Lê Thành Tâm</h3>
           <p class="team-role" style="font-size: 1.05rem; color: var(--orange); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Giảng Viên Chuyên Ngành Marketing</p>
           <p style="color: var(--muted); font-size: 0.9rem; margin-top: 12px;">Đại học FPT TP. Hồ Chí Minh</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CỐ VẤN VẬN HÀNH - CỰU BAN CHỦ NHIỆM ================= -->
+  <section id="ops-advisory" style="padding-bottom: 20px;">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">Thế hệ đi trước</div>
+        <h2 class="section-title">Cố Vấn Vận Hành</h2>
+        <p class="section-sub" style="margin-inline:auto;">Cựu Ban Chủ Nhiệm — những người đặt nền móng và đồng hành cùng sự phát triển của BEC.</p>
+      </div>
+
+      <div class="ops-advisory-wrapper reveal">
+        <div class="ops-card">
+          <span class="badge-tag">Cựu Ban Chủ Nhiệm</span>
+          <img src="1.png" alt="Trần Chí Kiên" class="ops-avatar-img" loading="lazy" decoding="async">
+          <h3 class="team-name">Trần Chí Kiên</h3>
+          <p class="team-role">Cựu Chủ Nhiệm CLB</p>
+        </div>
+        <div class="ops-card">
+          <span class="badge-tag">Cựu Ban Chủ Nhiệm</span>
+          <img src="2.png" alt="Trần Hải Phong" class="ops-avatar-img" loading="lazy" decoding="async">
+          <h3 class="team-name">Trần Hải Phong</h3>
+          <p class="team-role">Cựu Phó Chủ Nhiệm</p>
+        </div>
+        <div class="ops-card">
+          <span class="badge-tag">Cựu Ban Chủ Nhiệm</span>
+          <img src="3.png" alt="Hà Phú Khang" class="ops-avatar-img" loading="lazy" decoding="async">
+          <h3 class="team-name">Hà Phú Khang</h3>
+          <p class="team-role">Cựu Phó Chủ Nhiệm</p>
         </div>
       </div>
     </div>
@@ -1158,12 +1217,6 @@
     targetMouseY = e.clientY;
   });
 
-  // PERF FIX: canvas backing-store is now sized to the VIEWPORT only
-  // (it's position:fixed so only the viewport is ever visible). Before,
-  // it was sized to document.scrollHeight, meaning every frame filled a
-  // canvas up to ~10x taller than the screen on a long page like this
-  // one — the single biggest cause of mobile jank. docH is kept as a
-  // separate number just to preserve star-spread variety while scrolling.
   function resizeBg(){
     isMobile = window.innerWidth < 768;
     W = bgCanvas.width = window.innerWidth;
@@ -1207,10 +1260,6 @@
   }
 
   function drawBg(){
-    // PERF FIX: while the intro overlay is covering the screen, this
-    // canvas is fully hidden underneath it — so skip all the work and
-    // just keep the loop alive, freeing the full frame budget for the
-    // intro animation itself.
     if(document.body.classList.contains('intro-active')){
       requestAnimationFrame(drawBg);
       return;
@@ -1247,9 +1296,6 @@
       var alpha = s.baseAlpha + Math.sin(s.angle * 20) * 0.4;
       bgCtx.globalAlpha = Math.max(0, Math.min(1, alpha));
       
-      // PERF FIX: canvas shadowBlur is very costly on mobile GPUs (often
-      // falls back to a slow software blur). Skip it on mobile — the
-      // glow was only ever a small polish on ~15% of stars.
       if(!isMobile && s.size > 1.5) {
         bgCtx.shadowBlur = 12;
         bgCtx.shadowColor = s.hue;
