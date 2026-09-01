@@ -445,13 +445,14 @@
     transform: scale(1.03);
     backdrop-filter: blur(12px);
   }
-  .mentor-avatar {
-    width: 110px; height: 110px; border-radius: 50%;
-    margin: 0 auto 18px; border: 3px solid var(--orange);
+  .mentor-avatar-img {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 18px;
+    border: 3px solid var(--orange);
     box-shadow: 0 0 30px rgba(255,140,0,0.7);
-    display: grid; place-items: center; font-size: 3rem;
-    background: linear-gradient(135deg, var(--orange), var(--blue-2));
-    color: #000;
+    background: rgba(255,140,0,0.2);
   }
 
   /* ---------- CORE TEAM ---------- */
@@ -628,6 +629,30 @@
   @media(prefers-reduced-motion:reduce){
     *{animation-duration:.01ms !important;transition-duration:.01ms !important;}
   }
+
+  /* ---------- PERF: lighten the load while the intro is playing ---------- */
+  /* The nebula glow + floating planets sit behind the opaque intro overlay
+     and are invisible during the intro anyway — pausing their infinite
+     CSS animations for those ~1.8s frees up the compositor for the intro
+     canvas, which is what actually needs to stay at 60fps on phones. */
+  body.intro-active .nebula-bg,
+  body.intro-active .planet-1,
+  body.intro-active .planet-2,
+  body.intro-active .planet-3{
+    animation-play-state:paused;
+  }
+
+  /* ---------- PERF: skip layout/paint for offscreen sections ---------- */
+  /* content-visibility:auto tells the browser not to bother laying out
+     or painting these sections until they're about to scroll into view.
+     On a long page like this one (achievements gallery + team grid +
+     8-step timeline) that meaningfully cuts the work the browser does on
+     first paint, which is exactly when the intro needs its frame budget.
+     Safe no-op on browsers that don't support it (e.g. older Safari). */
+  #achievements, #core-team, #mentor, #timeline{
+    content-visibility:auto;
+    contain-intrinsic-size:auto 1200px;
+  }
 </style>
 </head>
 <body class="intro-active">
@@ -761,8 +786,8 @@
             <div class="achieve-title">Chung Kết CESIM ELITE VIETNAM</div>
           </div>
           <div class="achieve-photos">
-            <img src="CESIM1.jpg" alt="CESIM 1" class="achieve-img">
-            <img src="CESIM2.jpg" alt="CESIM 2" class="achieve-img">
+            <img src="CESIM1.jpg" alt="CESIM 1" class="achieve-img" loading="lazy" decoding="async">
+            <img src="CESIM2.jpg" alt="CESIM 2" class="achieve-img" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -772,8 +797,8 @@
             <div class="achieve-title">Workshop NCKH Không Khó</div>
           </div>
           <div class="achieve-photos">
-            <img src="NCKH1.png" alt="NCKH 1" class="achieve-img">
-            <img src="NCKH1.png" alt="NCKH 2" class="achieve-img">
+            <img src="NCKH1.png" alt="NCKH 1" class="achieve-img" loading="lazy" decoding="async">
+            <img src="NCKH1.png" alt="NCKH 2" class="achieve-img" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -783,8 +808,8 @@
             <div class="achieve-title">Professional Selling Mùa 8</div>
           </div>
           <div class="achieve-photos">
-            <img src="PROFESSIONAL1.png" alt="Professional 1" class="achieve-img">
-            <img src="PROFESSIONAL2.png" alt="Professional 2" class="achieve-img">
+            <img src="PROFESSIONAL1.png" alt="Professional 1" class="achieve-img" loading="lazy" decoding="async">
+            <img src="PROFESSIONAL2.png" alt="Professional 2" class="achieve-img" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -794,8 +819,8 @@
             <div class="achieve-title">Tham gia cuộc thi Nghiên cứu Khoa học</div>
           </div>
           <div class="achieve-photos">
-            <img src="THAMGIANCKH1.png" alt="Tham gia NCKH 1" class="achieve-img">
-            <img src="THAMGIANCKH2.png" alt="Tham gia NCKH 2" class="achieve-img">
+            <img src="THAMGIANCKH1.png" alt="Tham gia NCKH 1" class="achieve-img" loading="lazy" decoding="async">
+            <img src="THAMGIANCKH2.png" alt="Tham gia NCKH 2" class="achieve-img" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -805,8 +830,8 @@
             <div class="achieve-title">Cuộc thi ECON DEBATE ARENA Mùa 2</div>
           </div>
           <div class="achieve-photos">
-            <img src="ECO1.png" alt="Eco 1" class="achieve-img">
-            <img src="ECO2.png" alt="Eco 2" class="achieve-img">
+            <img src="ECO1.png" alt="Eco 1" class="achieve-img" loading="lazy" decoding="async">
+            <img src="ECO2.png" alt="Eco 2" class="achieve-img" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -816,8 +841,8 @@
             <div class="achieve-title">Đồng tổ chức Sự Kiện FES</div>
           </div>
           <div class="achieve-photos">
-            <img src="FES1.jpg" alt="FES 1" class="achieve-img">
-            <img src="FES2.jpg" alt="FES 2" class="achieve-img">
+            <img src="FES1.jpg" alt="FES 1" class="achieve-img" loading="lazy" decoding="async">
+            <img src="FES2.jpg" alt="FES 2" class="achieve-img" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -827,8 +852,8 @@
             <div class="achieve-title">Vũ Trụ Đồng Tiền</div>
           </div>
           <div class="achieve-photos">
-            <img src="VUTRU1.png" alt="Vũ Trụ 1" class="achieve-img">
-            <img src="VUTRU2.png" alt="Vũ Trụ 2" class="achieve-img">
+            <img src="VUTRU1.png" alt="Vũ Trụ 1" class="achieve-img" loading="lazy" decoding="async">
+            <img src="VUTRU2.png" alt="Vũ Trụ 2" class="achieve-img" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -838,8 +863,8 @@
             <div class="achieve-title">Talkshow Kỹ Năng Tranh Biện</div>
           </div>
           <div class="achieve-photos">
-            <img src="TALKSHOW1.png" alt="Talkshow 1" class="achieve-img">
-            <img src="TALKSHOW2.png" alt="Talkshow 2" class="achieve-img">
+            <img src="TALKSHOW1.png" alt="Talkshow 1" class="achieve-img" loading="lazy" decoding="async">
+            <img src="TALKSHOW2.png" alt="Talkshow 2" class="achieve-img" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -849,8 +874,8 @@
             <div class="achieve-title">Company Tour - FPT IS Company</div>
           </div>
           <div class="achieve-photos">
-            <img src="COMPANY1.jpg" alt="Company 1" class="achieve-img">
-            <img src="COMPANY2.jpg" alt="Company 2" class="achieve-img">
+            <img src="COMPANY1.jpg" alt="Company 1" class="achieve-img" loading="lazy" decoding="async">
+            <img src="COMPANY2.jpg" alt="Company 2" class="achieve-img" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -860,8 +885,8 @@
             <div class="achieve-title">Podcast Behind The Money Mùa 1</div>
           </div>
           <div class="achieve-photos">
-            <img src="TALKSHOW1.png" alt="Podcast 1" class="achieve-img">
-            <img src="TALKSHOW2.png" alt="Podcast 2" class="achieve-img">
+            <img src="TALKSHOW1.png" alt="Podcast 1" class="achieve-img" loading="lazy" decoding="async">
+            <img src="TALKSHOW2.png" alt="Podcast 2" class="achieve-img" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -911,7 +936,7 @@
       <div class="mentor-wrapper reveal">
         <div class="mentor-card">
           <span class="badge-tag" style="background: var(--orange); color: #000; font-weight: 800; padding: 4px 12px;">Cố Vấn Tối Cao</span>
-          <div class="mentor-avatar">👨‍🏫</div>
+          <img src="THAYTAM.jpg" alt="Thầy Lê Thành Tâm" class="mentor-avatar-img" loading="lazy" decoding="async">
           <h3 class="team-name" style="font-size: 1.5rem; color: #fff; margin-bottom: 8px; font-weight: 900; text-transform: uppercase;">Thầy Lê Thành Tâm</h3>
           <p class="team-role" style="font-size: 1.05rem; color: var(--orange); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Giảng Viên Chuyên Ngành Marketing</p>
           <p style="color: var(--muted); font-size: 0.9rem; margin-top: 12px;">Đại học FPT TP. Hồ Chí Minh</p>
@@ -933,19 +958,19 @@
         <div class="tier-1 reveal">
           <div class="team-card leader-card">
             <span class="badge-tag">Lãnh đạo cấp cao</span>
-            <img src="Hiển_.jpg" alt="Hồ Minh Hiển" class="team-avatar-img">
+            <img src="Hiển_.jpg" alt="Hồ Minh Hiển" class="team-avatar-img" loading="lazy" decoding="async">
             <h3 class="team-name">Hồ Minh Hiển</h3>
             <p class="team-role">Chủ Nhiệm</p>
           </div>
           <div class="team-card leader-card">
             <span class="badge-tag">Lãnh đạo cấp cao</span>
-            <img src="Nam.png" alt="Nguyễn Hải Nam" class="team-avatar-img">
+            <img src="Nam.png" alt="Nguyễn Hải Nam" class="team-avatar-img" loading="lazy" decoding="async">
             <h3 class="team-name">Nguyễn Hải Nam</h3>
             <p class="team-role">Phó Chủ Nhiệm</p>
           </div>
           <div class="team-card leader-card">
             <span class="badge-tag">Lãnh đạo cấp cao</span>
-            <img src="Mạnh.jpg" alt="Tăng Văn Mạnh" class="team-avatar-img">
+            <img src="Mạnh.jpg" alt="Tăng Văn Mạnh" class="team-avatar-img" loading="lazy" decoding="async">
             <h3 class="team-name">Tăng Văn Mạnh</h3>
             <p class="team-role">Phó Chủ Nhiệm<br>Kiêm Trưởng Ban Đối Ngoại</p>
           </div>
@@ -954,31 +979,31 @@
         <div class="tier-2-grid reveal">
           <div class="team-card member-card">
             <span class="badge-tag">Nhân Sự</span>
-            <img src="Tiến.jpg" alt="Bùi Đình Tiến" class="team-avatar-img-sm">
+            <img src="Tiến.jpg" alt="Bùi Đình Tiến" class="team-avatar-img-sm" loading="lazy" decoding="async">
             <h3 class="team-name">Bùi Đình Tiến</h3>
             <p class="team-role">Trưởng Ban Nhân Sự</p>
           </div>
           <div class="team-card member-card">
             <span class="badge-tag">Nhân Sự</span>
-            <img src="Tá.jpg" alt="Trần Trọng Tá" class="team-avatar-img-sm">
+            <img src="Tá.jpg" alt="Trần Trọng Tá" class="team-avatar-img-sm" loading="lazy" decoding="async">
             <h3 class="team-name">Trần Trọng Tá</h3>
             <p class="team-role">Phó Ban Nhân Sự</p>
           </div>
           <div class="team-card member-card">
             <span class="badge-tag">Đối Ngoại</span>
-            <img src="Giang.jpg" alt="Nguyễn Thị Trà Giang" class="team-avatar-img-sm">
+            <img src="Giang.jpg" alt="Nguyễn Thị Trà Giang" class="team-avatar-img-sm" loading="lazy" decoding="async">
             <h3 class="team-name">Nguyễn Thị Trà Giang</h3>
             <p class="team-role">Phó Ban Đối Ngoại</p>
           </div>
           <div class="team-card member-card">
             <span class="badge-tag">Truyền Thông</span>
-            <img src="Thành Đạt.jpg" alt="Nguyễn Hoàng Thành Đạt" class="team-avatar-img-sm">
+            <img src="Thành Đạt.jpg" alt="Nguyễn Hoàng Thành Đạt" class="team-avatar-img-sm" loading="lazy" decoding="async">
             <h3 class="team-name">Nguyễn Hoàng Thành Đạt</h3>
             <p class="team-role">Trưởng Ban Truyền Thông</p>
           </div>
           <div class="team-card member-card">
             <span class="badge-tag">Truyền Thông</span>
-            <img src="Gia Hân.jpg" alt="Vương Gia Hân" class="team-avatar-img-sm">
+            <img src="Gia Hân.jpg" alt="Vương Gia Hân" class="team-avatar-img-sm" loading="lazy" decoding="async">
             <h3 class="team-name">Vương Gia Hân</h3>
             <p class="team-role">Phó Ban Truyền Thông</p>
           </div>
@@ -1120,8 +1145,9 @@
   var bgCtx = bgCanvas.getContext('2d');
   var bgStars = [];
   var shootingStars = [];
-  var W, H;
-  
+  var W, H, docH;
+  var isMobile = window.innerWidth < 768;
+
   var mouseX = window.innerWidth / 2;
   var mouseY = window.innerHeight / 2;
   var targetMouseX = mouseX;
@@ -1132,26 +1158,34 @@
     targetMouseY = e.clientY;
   });
 
+  // PERF FIX: canvas backing-store is now sized to the VIEWPORT only
+  // (it's position:fixed so only the viewport is ever visible). Before,
+  // it was sized to document.scrollHeight, meaning every frame filled a
+  // canvas up to ~10x taller than the screen on a long page like this
+  // one — the single biggest cause of mobile jank. docH is kept as a
+  // separate number just to preserve star-spread variety while scrolling.
   function resizeBg(){
+    isMobile = window.innerWidth < 768;
     W = bgCanvas.width = window.innerWidth;
-    H = bgCanvas.height = document.documentElement.scrollHeight;
+    H = bgCanvas.height = window.innerHeight;
+    docH = document.documentElement.scrollHeight;
   }
-  
+
   function initBgStars(){
     resizeBg();
-    var isMobile = window.innerWidth < 768;
-    var count = isMobile ? 80 : Math.min(300, Math.floor((W*H)/5000)); 
+    var count = isMobile ? 55 : Math.min(220, Math.floor((W*H)/4500));
+    var spread = Math.max(W, docH) * 1.5;
     bgStars = [];
     for(var i=0;i<count;i++){
       var r = Math.random();
       bgStars.push({
         angle: Math.random() * Math.PI * 2,
-        radius: Math.random() * Math.max(W, H) * 1.5,
-        speed: (Math.random() * 0.001 + 0.0001) * (r < 0.1 ? 2.5 : 1), 
+        radius: Math.random() * spread,
+        speed: (Math.random() * 0.001 + 0.0001) * (r < 0.1 ? 2.5 : 1),
         size: Math.random() * 2 + 0.3,
         hue: Math.random() < 0.2 ? (Math.random()<0.5?'#ff8c00':'#4cc9f0') : '#ffffff',
         baseAlpha: Math.random() * 0.7 + 0.2,
-        z: Math.random() * 150 
+        z: Math.random() * 150
       });
     }
   }
@@ -1173,9 +1207,18 @@
   }
 
   function drawBg(){
-    bgCtx.fillStyle = 'rgba(5, 2, 8, 0.1)'; 
+    // PERF FIX: while the intro overlay is covering the screen, this
+    // canvas is fully hidden underneath it — so skip all the work and
+    // just keep the loop alive, freeing the full frame budget for the
+    // intro animation itself.
+    if(document.body.classList.contains('intro-active')){
+      requestAnimationFrame(drawBg);
+      return;
+    }
+
+    bgCtx.fillStyle = 'rgba(5, 2, 8, 0.1)';
     bgCtx.fillRect(0,0,W,H);
-    
+
     mouseX += (targetMouseX - mouseX) * 0.05;
     mouseY += (targetMouseY - mouseY) * 0.05;
     
@@ -1204,7 +1247,10 @@
       var alpha = s.baseAlpha + Math.sin(s.angle * 20) * 0.4;
       bgCtx.globalAlpha = Math.max(0, Math.min(1, alpha));
       
-      if(s.size > 1.5) {
+      // PERF FIX: canvas shadowBlur is very costly on mobile GPUs (often
+      // falls back to a slow software blur). Skip it on mobile — the
+      // glow was only ever a small polish on ~15% of stars.
+      if(!isMobile && s.size > 1.5) {
         bgCtx.shadowBlur = 12;
         bgCtx.shadowColor = s.hue;
       } else {
@@ -1274,8 +1320,7 @@
   function initIntroParticles(){
     resizeIntro();
     iParticles = [];
-    var isMobile = window.innerWidth < 768;
-    var count = reducedMotion ? 0 : (isMobile ? 40 : 120);
+    var count = reducedMotion ? 0 : (isMobile ? 26 : 120);
     for(var i=0;i<count;i++){
       var angle = Math.random()*Math.PI*2;
       var radius = Math.random()*Math.max(iW,iH)*0.6 + 40;
