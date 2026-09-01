@@ -426,6 +426,34 @@
   .dept-card .slots{font-size:.78rem;color:var(--muted-2);border-top:1px solid var(--card-border);padding-top:14px;}
   .dept-card .slots b{color:#fff;}
 
+  /* ---------- MENTOR SECTION ---------- */
+  .mentor-wrapper {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .mentor-card {
+    background: linear-gradient(160deg, rgba(255,140,0,0.25), rgba(76,201,240,0.1), rgba(10,7,20,0.95));
+    border: 3px solid var(--orange);
+    border-radius: var(--radius);
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: min(420px, 100%);
+    box-shadow: 0 0 50px rgba(255,140,0,0.4), inset 0 0 30px rgba(255,140,0,0.2);
+    transform: scale(1.03);
+    backdrop-filter: blur(12px);
+  }
+  .mentor-avatar {
+    width: 110px; height: 110px; border-radius: 50%;
+    margin: 0 auto 18px; border: 3px solid var(--orange);
+    box-shadow: 0 0 30px rgba(255,140,0,0.7);
+    display: grid; place-items: center; font-size: 3rem;
+    background: linear-gradient(135deg, var(--orange), var(--blue-2));
+    color: #000;
+  }
+
   /* ---------- CORE TEAM ---------- */
   .team-wrapper {
     margin-top: 54px;
@@ -633,12 +661,13 @@
   <nav class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="#hero" class="logo">
-        <img src="images/LOGOBEC-01.png" alt="BEC Logo" class="logo-img">
+        <img src="LOGOBEC-01.png" alt="BEC Logo" class="logo-img">
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">Giới thiệu</a></li>
         <li><a href="#achievements">Thành tích</a></li>
         <li><a href="#departments">Các ban</a></li>
+        <li><a href="#mentor">Cố vấn</a></li>
         <li><a href="#core-team">Ban điều hành</a></li>
         <li><a href="#timeline">Lộ trình</a></li>
       </ul>
@@ -732,8 +761,8 @@
             <div class="achieve-title">Chung Kết CESIM ELITE VIETNAM</div>
           </div>
           <div class="achieve-photos">
-            <img src="images/CESIM1.jpg" alt="CESIM 1" class="achieve-img">
-            <img src="images/CESIM2.jpg" alt="CESIM 2" class="achieve-img">
+            <img src="CESIM1.jpg" alt="CESIM 1" class="achieve-img">
+            <img src="CESIM2.jpg" alt="CESIM 2" class="achieve-img">
           </div>
         </div>
 
@@ -743,8 +772,8 @@
             <div class="achieve-title">Workshop NCKH Không Khó</div>
           </div>
           <div class="achieve-photos">
-            <img src="images/NCKH1.png" alt="NCKH 1" class="achieve-img">
-            <img src="images/NCKH1.png" alt="NCKH 2" class="achieve-img">
+            <img src="NCKH1.png" alt="NCKH 1" class="achieve-img">
+            <img src="NCKH1.png" alt="NCKH 2" class="achieve-img">
           </div>
         </div>
 
@@ -754,8 +783,8 @@
             <div class="achieve-title">Professional Selling Mùa 8</div>
           </div>
           <div class="achieve-photos">
-            <img src="images/PROFESSIONAL1.png" alt="Professional 1" class="achieve-img">
-            <img src="images/PROFESSIONAL2.png" alt="Professional 2" class="achieve-img">
+            <img src="PROFESSIONAL1.png" alt="Professional 1" class="achieve-img">
+            <img src="PROFESSIONAL2.png" alt="Professional 2" class="achieve-img">
           </div>
         </div>
 
@@ -765,8 +794,8 @@
             <div class="achieve-title">Tham gia cuộc thi Nghiên cứu Khoa học</div>
           </div>
           <div class="achieve-photos">
-            <img src="images/THAMGIANCKH1.png" alt="Tham gia NCKH 1" class="achieve-img">
-            <img src="images/THAMGIANCKH2.png" alt="Tham gia NCKH 2" class="achieve-img">
+            <img src="THAMGIANCKH1.png" alt="Tham gia NCKH 1" class="achieve-img">
+            <img src="THAMGIANCKH2.png" alt="Tham gia NCKH 2" class="achieve-img">
           </div>
         </div>
 
@@ -776,8 +805,8 @@
             <div class="achieve-title">Cuộc thi ECON DEBATE ARENA Mùa 2</div>
           </div>
           <div class="achieve-photos">
-            <img src="images/ECO1.png" alt="Eco 1" class="achieve-img">
-            <img src="images/ECO2.png" alt="Eco 2" class="achieve-img">
+            <img src="ECO1.png" alt="Eco 1" class="achieve-img">
+            <img src="ECO2.png" alt="Eco 2" class="achieve-img">
           </div>
         </div>
 
@@ -787,8 +816,8 @@
             <div class="achieve-title">Đồng tổ chức Sự Kiện FES</div>
           </div>
           <div class="achieve-photos">
-            <img src="images/FES1.jpg" alt="FES 1" class="achieve-img">
-            <img src="images/FES2.jpg" alt="FES 2" class="achieve-img">
+            <img src="FES1.jpg" alt="FES 1" class="achieve-img">
+            <img src="FES2.jpg" alt="FES 2" class="achieve-img">
           </div>
         </div>
 
@@ -798,8 +827,8 @@
             <div class="achieve-title">Vũ Trụ Đồng Tiền</div>
           </div>
           <div class="achieve-photos">
-            <img src="images/VUTRU1.png" alt="Vũ Trụ 1" class="achieve-img">
-            <img src="images/VUTRU2.png" alt="Vũ Trụ 2" class="achieve-img">
+            <img src="VUTRU1.png" alt="Vũ Trụ 1" class="achieve-img">
+            <img src="VUTRU2.png" alt="Vũ Trụ 2" class="achieve-img">
           </div>
         </div>
 
@@ -809,8 +838,8 @@
             <div class="achieve-title">Talkshow Kỹ Năng Tranh Biện</div>
           </div>
           <div class="achieve-photos">
-            <img src="images/TALKSHOW1.png" alt="Talkshow 1" class="achieve-img">
-            <img src="images/TALKSHOW2.png" alt="Talkshow 2" class="achieve-img">
+            <img src="TALKSHOW1.png" alt="Talkshow 1" class="achieve-img">
+            <img src="TALKSHOW2.png" alt="Talkshow 2" class="achieve-img">
           </div>
         </div>
 
@@ -820,8 +849,8 @@
             <div class="achieve-title">Company Tour - FPT IS Company</div>
           </div>
           <div class="achieve-photos">
-            <img src="images/COMPANY1.jpg" alt="Company 1" class="achieve-img">
-            <img src="images/COMPANY2.jpg" alt="Company 2" class="achieve-img">
+            <img src="COMPANY1.jpg" alt="Company 1" class="achieve-img">
+            <img src="COMPANY2.jpg" alt="Company 2" class="achieve-img">
           </div>
         </div>
 
@@ -831,8 +860,8 @@
             <div class="achieve-title">Podcast Behind The Money Mùa 1</div>
           </div>
           <div class="achieve-photos">
-            <img src="images/TALKSHOW1.png" alt="Podcast 1" class="achieve-img">
-            <img src="images/TALKSHOW2.png" alt="Podcast 2" class="achieve-img">
+            <img src="TALKSHOW1.png" alt="Podcast 1" class="achieve-img">
+            <img src="TALKSHOW2.png" alt="Podcast 2" class="achieve-img">
           </div>
         </div>
       </div>
@@ -870,6 +899,27 @@
     </div>
   </section>
 
+  <!-- ================= MENTOR / CỐ VẤN CHUYÊN MÔN ================= -->
+  <section id="mentor" style="padding-bottom: 20px;">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">Định hướng chuyên môn</div>
+        <h2 class="section-title">Cố Vấn Mentor CLB</h2>
+        <p class="section-sub" style="margin-inline:auto;">Người đồng hành, định hướng chiến lược và truyền lửa đam mê cho các thế hệ BEC.</p>
+      </div>
+
+      <div class="mentor-wrapper reveal">
+        <div class="mentor-card">
+          <span class="badge-tag" style="background: var(--orange); color: #000; font-weight: 800; padding: 4px 12px;">Cố Vấn Tối Cao</span>
+          <div class="mentor-avatar">👨‍🏫</div>
+          <h3 class="team-name" style="font-size: 1.5rem; color: #fff; margin-bottom: 8px; font-weight: 900; text-transform: uppercase;">Thầy Lê Thành Tâm</h3>
+          <p class="team-role" style="font-size: 1.05rem; color: var(--orange); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Giảng Viên Chuyên Ngành Marketing</p>
+          <p style="color: var(--muted); font-size: 0.9rem; margin-top: 12px;">Đại học FPT TP. Hồ Chí Minh</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= CORE TEAM ================= -->
   <section id="core-team">
     <div class="container">
@@ -883,19 +933,19 @@
         <div class="tier-1 reveal">
           <div class="team-card leader-card">
             <span class="badge-tag">Lãnh đạo cấp cao</span>
-            <img src="images/Hiển_.jpg" alt="Hồ Minh Hiển" class="team-avatar-img">
+            <img src="Hiển_.jpg" alt="Hồ Minh Hiển" class="team-avatar-img">
             <h3 class="team-name">Hồ Minh Hiển</h3>
             <p class="team-role">Chủ Nhiệm</p>
           </div>
           <div class="team-card leader-card">
             <span class="badge-tag">Lãnh đạo cấp cao</span>
-            <img src="images/Nam.png" alt="Nguyễn Hải Nam" class="team-avatar-img">
+            <img src="Nam.png" alt="Nguyễn Hải Nam" class="team-avatar-img">
             <h3 class="team-name">Nguyễn Hải Nam</h3>
             <p class="team-role">Phó Chủ Nhiệm</p>
           </div>
           <div class="team-card leader-card">
             <span class="badge-tag">Lãnh đạo cấp cao</span>
-            <img src="images/Mạnh.jpg" alt="Tăng Văn Mạnh" class="team-avatar-img">
+            <img src="Mạnh.jpg" alt="Tăng Văn Mạnh" class="team-avatar-img">
             <h3 class="team-name">Tăng Văn Mạnh</h3>
             <p class="team-role">Phó Chủ Nhiệm<br>Kiêm Trưởng Ban Đối Ngoại</p>
           </div>
@@ -904,31 +954,31 @@
         <div class="tier-2-grid reveal">
           <div class="team-card member-card">
             <span class="badge-tag">Nhân Sự</span>
-            <img src="images/Tiến.jpg" alt="Bùi Đình Tiến" class="team-avatar-img-sm">
+            <img src="Tiến.jpg" alt="Bùi Đình Tiến" class="team-avatar-img-sm">
             <h3 class="team-name">Bùi Đình Tiến</h3>
             <p class="team-role">Trưởng Ban Nhân Sự</p>
           </div>
           <div class="team-card member-card">
             <span class="badge-tag">Nhân Sự</span>
-            <img src="images/Tá.jpg" alt="Trần Trọng Tá" class="team-avatar-img-sm">
+            <img src="Tá.jpg" alt="Trần Trọng Tá" class="team-avatar-img-sm">
             <h3 class="team-name">Trần Trọng Tá</h3>
             <p class="team-role">Phó Ban Nhân Sự</p>
           </div>
           <div class="team-card member-card">
             <span class="badge-tag">Đối Ngoại</span>
-            <img src="images/Giang.jpg" alt="Nguyễn Thị Trà Giang" class="team-avatar-img-sm">
+            <img src="Giang.jpg" alt="Nguyễn Thị Trà Giang" class="team-avatar-img-sm">
             <h3 class="team-name">Nguyễn Thị Trà Giang</h3>
             <p class="team-role">Phó Ban Đối Ngoại</p>
           </div>
           <div class="team-card member-card">
             <span class="badge-tag">Truyền Thông</span>
-            <img src="images/Thành Đạt.jpg" alt="Nguyễn Hoàng Thành Đạt" class="team-avatar-img-sm">
+            <img src="Thành Đạt.jpg" alt="Nguyễn Hoàng Thành Đạt" class="team-avatar-img-sm">
             <h3 class="team-name">Nguyễn Hoàng Thành Đạt</h3>
             <p class="team-role">Trưởng Ban Truyền Thông</p>
           </div>
           <div class="team-card member-card">
             <span class="badge-tag">Truyền Thông</span>
-            <img src="images/Gia Hân.jpg" alt="Vương Gia Hân" class="team-avatar-img-sm">
+            <img src="Gia Hân.jpg" alt="Vương Gia Hân" class="team-avatar-img-sm">
             <h3 class="team-name">Vương Gia Hân</h3>
             <p class="team-role">Phó Ban Truyền Thông</p>
           </div>
@@ -1032,7 +1082,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#hero" class="logo">
-            <img src="images/LOGOBEC-01.png" alt="BEC Logo" class="logo-img">
+            <img src="LOGOBEC-01.png" alt="BEC Logo" class="logo-img">
           </a>
           <p>Business Economics Club — Nơi những ý tưởng kinh tế bừng sáng như các vì sao. Cùng chúng mình khám phá vũ trụ kinh doanh tại Đại học FPT.</p>
           <div class="socials">
@@ -1089,9 +1139,8 @@
   
   function initBgStars(){
     resizeBg();
-    // Giảm số lượng sao trên mobile để tối ưu hiệu năng không bị lag
     var isMobile = window.innerWidth < 768;
-    var count = isMobile ? 120 : Math.min(400, Math.floor((W*H)/4000)); 
+    var count = isMobile ? 80 : Math.min(300, Math.floor((W*H)/5000)); 
     bgStars = [];
     for(var i=0;i<count;i++){
       var r = Math.random();
@@ -1226,8 +1275,7 @@
     resizeIntro();
     iParticles = [];
     var isMobile = window.innerWidth < 768;
-    // Tối ưu hóa số lượng hạt intro cho mobile để tránh bị lag
-    var count = reducedMotion ? 0 : (isMobile ? 80 : 220);
+    var count = reducedMotion ? 0 : (isMobile ? 40 : 120);
     for(var i=0;i<count;i++){
       var angle = Math.random()*Math.PI*2;
       var radius = Math.random()*Math.max(iW,iH)*0.6 + 40;
@@ -1241,7 +1289,7 @@
     }
   }
   function drawIntro(){
-    iCtx.fillStyle = 'rgba(5,2,8,0.35)';
+    iCtx.fillStyle = 'rgba(5,2,8,0.4)';
     iCtx.fillRect(0,0,iW,iH);
     var cx = iW/2, cy = iH/2;
     for(var i=0;i<iParticles.length;i++){
@@ -1264,17 +1312,17 @@
     if(reducedMotion){ finishIntro(true); return; }
     initIntroParticles();
     drawIntro();
-    var t1 = setTimeout(function(){ introEl.classList.add('phase-stars'); }, 60);
-    var t2 = setTimeout(function(){ introEl.classList.add('phase-warp'); warping = true; }, 1700);
-    var t3 = setTimeout(function(){ introEl.classList.add('phase-flash'); }, 2650);
-    var t4 = setTimeout(function(){ finishIntro(false); }, 3050);
+    var t1 = setTimeout(function(){ introEl.classList.add('phase-stars'); }, 40);
+    var t2 = setTimeout(function(){ introEl.classList.add('phase-warp'); warping = true; }, 900);
+    var t3 = setTimeout(function(){ introEl.classList.add('phase-flash'); }, 1500);
+    var t4 = setTimeout(function(){ finishIntro(false); }, 1800);
     introEl._timers = [t1,t2,t3,t4];
   }
 
   function finishIntro(instant){
     if(introEl._timers) introEl._timers.forEach(clearTimeout);
     introEl.classList.add('phase-open');
-    var delay = instant ? 0 : 1100;
+    var delay = instant ? 0 : 600;
     setTimeout(function(){
       introEl.style.display = 'none';
       document.body.classList.remove('intro-active');
