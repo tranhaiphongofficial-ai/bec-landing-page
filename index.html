@@ -398,27 +398,13 @@
     grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
-  .achieve-img-box {
-    height: 120px;
+  .achieve-img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
     border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.15);
     background: rgba(255,255,255,0.04);
-    border: 1px dashed rgba(255,255,255,0.15);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--muted-2);
-    font-size: 0.75rem;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    overflow: hidden;
-  }
-  .achieve-img-box::before {
-    content: "🌌";
-    font-size: 1.3rem;
-    margin-bottom: 4px;
-    opacity: 0.5;
   }
 
   /* ---------- departments ---------- */
@@ -468,11 +454,14 @@
     transform: translateY(-8px);
     box-shadow: 0 16px 50px -10px rgba(255,140,0,0.4);
   }
-  .team-card.leader-card .team-avatar {
-    width: 80px; height: 80px; font-size: 2rem;
-    background: linear-gradient(135deg, var(--orange), #fff);
-    box-shadow: 0 0 25px rgba(255,140,0,0.6);
-    margin: 0 auto 14px; border-radius: 50%; display: grid; place-items: center; color: #000;
+  .team-avatar-img {
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 14px;
+    border: 2px solid var(--orange);
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+    background: rgba(255,140,0,0.2);
   }
   .team-card.leader-card .team-name { font-size: 1.15rem; color: #fff; margin-bottom: 6px; font-weight: 800; text-transform: uppercase; }
   .team-card.leader-card .team-role { font-size: 0.85rem; color: var(--orange); font-weight: 800; text-transform: uppercase; }
@@ -496,12 +485,14 @@
     border-color: var(--blue-2);
     box-shadow: 0 10px 30px -10px rgba(76,201,240,0.3);
   }
-  .team-card.member-card .team-avatar {
-    width: 60px; height: 60px; font-size: 1.4rem;
-    background: linear-gradient(135deg, var(--blue-2), var(--blue));
-    color: #fff;
-    box-shadow: 0 0 15px rgba(76,201,240,0.3);
-    margin: 0 auto 12px; border-radius: 50%; display: grid; place-items: center;
+  .team-avatar-img-sm {
+    width: 65px; height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 12px;
+    border: 2px solid var(--blue-2);
+    box-shadow: 0 0 15px rgba(76, 201, 240, 0.3);
+    background: rgba(76,201,240,0.2);
   }
   .team-card.member-card .team-name { font-size: 0.9rem; margin-bottom: 4px; font-weight: 800; text-transform: uppercase; }
   .team-card.member-card .team-role { font-size: 0.72rem; color: var(--blue-2); text-transform: uppercase; font-weight: 600; }
@@ -604,7 +595,7 @@
     .tl-item{gap:16px;}
     .tl-dot{width:42px;height:42px;font-size:.75rem;}
     .planet-1 { width: 160px; height: 160px; right: -10px; top: 0px; opacity: 0.3; }
-    .hero-content h1 { font-size: clamp(2rem, 8vw, 3.2rem); }
+    .hero-content h1 { font-size: clamp(2.0rem, 8vw, 3.2rem); }
   }
   @media(prefers-reduced-motion:reduce){
     *{animation-duration:.01ms !important;transition-duration:.01ms !important;}
@@ -642,7 +633,7 @@
   <nav class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="#hero" class="logo">
-        <img src="LOGOBEC-01.png" alt="BEC Logo" class="logo-img">
+        <img src="images/LOGOBEC-01.png" alt="BEC Logo" class="logo-img">
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">Giới thiệu</a></li>
@@ -741,8 +732,8 @@
             <div class="achieve-title">Chung Kết CESIM ELITE VIETNAM</div>
           </div>
           <div class="achieve-photos">
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+            <img src="images/CESIM1.JPG" alt="CESIM 1" class="achieve-img">
+            <img src="images/CESIM2.JPG" alt="CESIM 2" class="achieve-img">
           </div>
         </div>
 
@@ -752,8 +743,8 @@
             <div class="achieve-title">Workshop NCKH Không Khó</div>
           </div>
           <div class="achieve-photos">
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+            <img src="images/NCKH1.PNG" alt="NCKH 1" class="achieve-img">
+            <img src="images/NCKH1.PNG" alt="NCKH 2" class="achieve-img">
           </div>
         </div>
 
@@ -763,8 +754,8 @@
             <div class="achieve-title">Professional Selling Mùa 8</div>
           </div>
           <div class="achieve-photos">
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+            <img src="images/PROFESSIONAL1.PNG" alt="Professional 1" class="achieve-img">
+            <img src="images/PROFESSIONAL2.PNG" alt="Professional 2" class="achieve-img">
           </div>
         </div>
 
@@ -774,8 +765,8 @@
             <div class="achieve-title">Tham gia cuộc thi Nghiên cứu Khoa học</div>
           </div>
           <div class="achieve-photos">
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+            <img src="images/THAMGIANCKH1.PNG" alt="Tham gia NCKH 1" class="achieve-img">
+            <img src="images/THAMGIANCKH2.PNG" alt="Tham gia NCKH 2" class="achieve-img">
           </div>
         </div>
 
@@ -785,8 +776,8 @@
             <div class="achieve-title">Cuộc thi ECON DEBATE ARENA Mùa 2</div>
           </div>
           <div class="achieve-photos">
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+            <img src="images/ECO1.PNG" alt="Eco 1" class="achieve-img">
+            <img src="images/ECO2.PNG" alt="Eco 2" class="achieve-img">
           </div>
         </div>
 
@@ -796,8 +787,8 @@
             <div class="achieve-title">Đồng tổ chức Sự Kiện FES</div>
           </div>
           <div class="achieve-photos">
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+            <img src="images/FES1.JPG" alt="FES 1" class="achieve-img">
+            <img src="images/FES2.JPG" alt="FES 2" class="achieve-img">
           </div>
         </div>
 
@@ -807,8 +798,8 @@
             <div class="achieve-title">Vũ Trụ Đồng Tiền</div>
           </div>
           <div class="achieve-photos">
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+            <img src="images/VUTRU1.PNG" alt="Vũ Trụ 1" class="achieve-img">
+            <img src="images/VUTRU2.PNG" alt="Vũ Trụ 2" class="achieve-img">
           </div>
         </div>
 
@@ -818,8 +809,8 @@
             <div class="achieve-title">Talkshow Kỹ Năng Tranh Biện</div>
           </div>
           <div class="achieve-photos">
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+            <img src="images/TALKSHOW1.PNG" alt="Talkshow 1" class="achieve-img">
+            <img src="images/TALKSHOW2.PNG" alt="Talkshow 2" class="achieve-img">
           </div>
         </div>
 
@@ -829,8 +820,8 @@
             <div class="achieve-title">Company Tour - FPT IS Company</div>
           </div>
           <div class="achieve-photos">
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+            <img src="images/COMPANY1.JPG" alt="Company 1" class="achieve-img">
+            <img src="images/COMPANY2.JPG" alt="Company 2" class="achieve-img">
           </div>
         </div>
 
@@ -840,8 +831,8 @@
             <div class="achieve-title">Podcast Behind The Money Mùa 1</div>
           </div>
           <div class="achieve-photos">
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 1</span></div>
-            <div class="achieve-img-box"><span>Hình ảnh hoạt động 2</span></div>
+            <img src="images/TALKSHOW1.PNG" alt="Podcast 1" class="achieve-img">
+            <img src="images/TALKSHOW2.PNG" alt="Podcast 2" class="achieve-img">
           </div>
         </div>
       </div>
@@ -890,54 +881,62 @@
 
       <div class="team-wrapper">
         <div class="tier-1 reveal">
+          <!-- Hồ Minh Hiển - Chủ nhiệm -->
           <div class="team-card leader-card">
             <span class="badge-tag">Lãnh đạo cấp cao</span>
-            <div class="team-avatar">👑</div>
+            <img src="images/Hiển_.JPG" alt="Hồ Minh Hiển" class="team-avatar-img">
             <h3 class="team-name">Hồ Minh Hiển</h3>
             <p class="team-role">Chủ Nhiệm</p>
           </div>
+          <!-- Nguyễn Hải Nam - Phó chủ nhiệm -->
           <div class="team-card leader-card">
             <span class="badge-tag">Lãnh đạo cấp cao</span>
-            <div class="team-avatar">⭐</div>
+            <img src="images/Nam.PNG" alt="Nguyễn Hải Nam" class="team-avatar-img">
             <h3 class="team-name">Nguyễn Hải Nam</h3>
             <p class="team-role">Phó Chủ Nhiệm</p>
           </div>
+          <!-- Tăng Văn Mạnh - Phó chủ nhiệm kiêm trưởng ban đối ngoại -->
           <div class="team-card leader-card">
             <span class="badge-tag">Lãnh đạo cấp cao</span>
-            <div class="team-avatar">⚡</div>
+            <img src="images/Mạnh.JPG" alt="Tăng Văn Mạnh" class="team-avatar-img">
             <h3 class="team-name">Tăng Văn Mạnh</h3>
             <p class="team-role">Phó Chủ Nhiệm<br>Kiêm Trưởng Ban Đối Ngoại</p>
           </div>
         </div>
 
         <div class="tier-2-grid reveal">
+          <!-- Bùi Đình Tiến - Trưởng ban nhân sự -->
           <div class="team-card member-card">
             <span class="badge-tag">Nhân Sự</span>
-            <div class="team-avatar">🎯</div>
+            <img src="images/Tiến.JPG" alt="Bùi Đình Tiến" class="team-avatar-img-sm">
             <h3 class="team-name">Bùi Đình Tiến</h3>
             <p class="team-role">Trưởng Ban Nhân Sự</p>
           </div>
+          <!-- Trần Trọng Tá - Phó ban nhân sự -->
           <div class="team-card member-card">
             <span class="badge-tag">Nhân Sự</span>
-            <div class="team-avatar">🤝</div>
+            <img src="images/Tá.JPG" alt="Trần Trọng Tá" class="team-avatar-img-sm">
             <h3 class="team-name">Trần Trọng Tá</h3>
             <p class="team-role">Phó Ban Nhân Sự</p>
           </div>
+          <!-- Nguyễn Thị Trà Giang - Phó ban đối ngoại -->
           <div class="team-card member-card">
             <span class="badge-tag">Đối Ngoại</span>
-            <div class="team-avatar">🌐</div>
+            <img src="images/Giang.JPG" alt="Nguyễn Thị Trà Giang" class="team-avatar-img-sm">
             <h3 class="team-name">Nguyễn Thị Trà Giang</h3>
             <p class="team-role">Phó Ban Đối Ngoại</p>
           </div>
+          <!-- Nguyễn Hoàng Thành Đạt - Trưởng ban truyền thông -->
           <div class="team-card member-card">
             <span class="badge-tag">Truyền Thông</span>
-            <div class="team-avatar">🎬</div>
+            <img src="images/Thành Đạt.JPG" alt="Nguyễn Hoàng Thành Đạt" class="team-avatar-img-sm">
             <h3 class="team-name">Nguyễn Hoàng Thành Đạt</h3>
             <p class="team-role">Trưởng Ban Truyền Thông</p>
           </div>
+          <!-- Vương Gia Hân - Phó ban truyền thông -->
           <div class="team-card member-card">
             <span class="badge-tag">Truyền Thông</span>
-            <div class="team-avatar">🎨</div>
+            <img src="images/Gia Hân.JPG" alt="Vương Gia Hân" class="team-avatar-img-sm">
             <h3 class="team-name">Vương Gia Hân</h3>
             <p class="team-role">Phó Ban Truyền Thông</p>
           </div>
@@ -1041,7 +1040,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#hero" class="logo">
-            <img src="LOGOBEC-01.png" alt="BEC Logo" class="logo-img">
+            <img src="images/LOGOBEC-01.png" alt="BEC Logo" class="logo-img">
           </a>
           <p>Business Economics Club — Nơi những ý tưởng kinh tế bừng sáng như các vì sao. Cùng chúng mình khám phá vũ trụ kinh doanh tại Đại học FPT.</p>
           <div class="socials">
